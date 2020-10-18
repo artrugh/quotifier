@@ -1,10 +1,12 @@
 const express = require("express");
+const { graphqlHTTP } = require("express-graphql");
+require("dotenv").config();
 const app = express();
 
-//route test
-//go to localhost:5000/home to see if server is started
-app.get("/home", (req, res) => {
-  res.send("homepage");
-});
+const PORT = process.env.PORT;
 
-module.exports = app;
+app.use("/graphql", graphqlHTTP({}));
+
+app.listen(PORT, () => {
+  console.log(`listening to requests on port ${PORT}`);
+});
