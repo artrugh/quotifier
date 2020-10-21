@@ -1,6 +1,6 @@
 import React from "react";
 import AboutElements from "./components/AboutElements";
-
+import Help from "./components/Help";
 function App() {
   return (
     <div className="App">
@@ -11,6 +11,7 @@ function App() {
       <h1>Quotifier</h1>
 
       <AboutElements />
+      <Help />
     </div>
   );
 }
