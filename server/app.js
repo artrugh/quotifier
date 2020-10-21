@@ -21,11 +21,11 @@ mongoose
     console.log(`There was a problem ${error.message}`);
   });
 
+// routes
+const authRoutes = require("./routes/authRoutes");
 app.get("/_health", (req, res) => {
   res.status(200).send("ok");
 });
-
-const userControllers = require("./controllers/userControllers");
-app.post("/users", userControllers.addUser);
+app.use(authRoutes);
 
 module.exports = app;
