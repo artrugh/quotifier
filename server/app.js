@@ -8,6 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.raw());
 
+// connect database
 const mongoose = require("mongoose");
 mongoose
   .connect(process.env.DB_URL, {
