@@ -3,6 +3,7 @@ const app = express();
 const morgan = require("morgan");
 app.use(morgan("dev"));
 
+// middleware
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -27,5 +28,7 @@ app.get("/_health", (req, res) => {
   res.status(200).send("ok");
 });
 app.use(authRoutes);
+const userRoutes = require("./routes/userRoutes");
+app.use(userRoutes);
 
 module.exports = app;

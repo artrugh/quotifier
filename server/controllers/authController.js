@@ -1,7 +1,13 @@
-module.exports.login_get = (req, res) => {
+const authControllers = {};
+
+authControllers.login_get = (req, res) => {
   res.status(200).send("login");
 };
 
-module.exports.login_post = (req, res) => {
+authControllers.login_post = async (req, res) => {
+  const { email, password } = req.body;
+  console.log(email, password);
   res.send("user login");
 };
+
+module.exports = authControllers;
