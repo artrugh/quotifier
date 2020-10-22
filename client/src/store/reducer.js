@@ -1,17 +1,15 @@
-// returns a state and an action
+import * as actionTypes from "./actions";
 
-// const initialState = {
-//   counter: 0,
-// };
+const initialState = {
+  signIn: false,
+};
 
-// const reducer = (state = (initialState = {}), action) => {
-//   if (action.type === "INCREMENT") {
-//     return {
-//       ...state,
-//       counter: state.counter + 1,
-//     };
-//   }
-//   return state;
-// };
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case actionTypes.SIGN_IN:
+      return !state;
+  }
+  return state;
+};
 
-// export default reducer;
+export default reducer;
