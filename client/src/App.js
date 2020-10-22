@@ -1,9 +1,8 @@
 import React from "react";
 import Aux from "./hoc/Aux";
-import LogInElements from "./components/LogInElements";
-// import Persons from "./containers/Persons";
-import Logins from "./containers/Logins";
-import { useSelector, useDispatch } from "react-redux";
+import Counter from "./components/CounterElements";
+import LogIns from "./containers/LogIns";
+import { useSelector } from "react-redux";
 import HomeElements from "react";
 import SIGN_IN from "./store/actions";
 
@@ -21,11 +20,11 @@ function App() {
 
         {/* {isLogged ? <HomeElements /> : ""} */}
 
-        {isLogged ? <h3>valuable content</h3> : ""}
+        {isLogged ? <h3>valuable content</h3> : <h3>NO CONTENT</h3>}
 
-        <LogInElements />
+        <Counter />
 
-        <Logins />
+        <LogIns />
       </div>
     </Aux>
   );

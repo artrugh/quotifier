@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Login from "../components/Login";
+import LogIn from "../components/LogIn";
 import * as actionTypes from "../store/actions";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 
 class Logins extends Component {
   render() {
     return (
       <div>
-        <Login signedIn={this.props.onSignedIn} />
+        {/* <LogIn signedIn={this.props.onSignedIn} /> */}
+        <button onClick={this.onSignedIn}>Sign In</button>
       </div>
     );
   }
