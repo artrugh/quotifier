@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
+const { requireAuth, checkUser } = require("./middleware/authMiddleware");
 app.use(morgan("dev"));
 
 // middleware
@@ -25,11 +26,10 @@ mongoose
   });
 
 // routes
-const authRoutes = require("./routes/authRoutes");
+app.get("*", checkUser);
 app.get("/_health", (req, res) => {
   res.status(200).send("ok");
 });
-app.use(authRoutes);
 const userRoutes = require("./routes/userRoutes");
 app.use(userRoutes);
 
@@ -47,6 +47,10 @@ app.get("/read-cookies", (req, res) => {
   const cookies = req.cookies;
   console.log(cookies);
   res.json(cookies);
+});
+
+app.get("/protected-route", requireAuth, (req, res) => {
+  res.status(200).send("you're OK");
 });
 
 module.exports = app;
