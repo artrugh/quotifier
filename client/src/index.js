@@ -3,10 +3,10 @@ import ReactDOM from "react-dom";
 import App from "./App";
 //----------redux----------------------
 import { createStore } from "redux";
-import reducer from "./store/reducer";
 import { Provider } from "react-redux"; // app is wrapped by provider and so it is connected to redux
+import allReducer from "./reducers";
 
-const store = createStore(reducer);
+const store = createStore(allReducer);
 
 ReactDOM.render(
   <React.StrictMode>

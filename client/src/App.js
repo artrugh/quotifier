@@ -1,14 +1,14 @@
 import React from "react";
 import Aux from "./hoc/Aux";
-import Counter from "./components/CounterElements";
-import LogIns from "./containers/LogIns";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import HomeElements from "react";
-import SIGN_IN from "./store/actions";
+import { increment, decrement, login } from "./actions";
 
 function App() {
-  // this makes possible to access the whole state
-  const isLogged = useSelector((state) => state.reducer);
+  // useSelector makes possible to access the whole state
+  const counter = useSelector((state) => state.counter);
+  const isLogged = useSelector((state) => state.isLogged);
+  const dispatch = useDispatch();
   return (
     <Aux>
       <div className="App">
@@ -18,13 +18,36 @@ function App() {
 
         <h1>Quotifier</h1>
 
-        {/* {isLogged ? <HomeElements /> : ""} */}
+        <h1>Counter {counter}</h1>
+        <button
+          onClick={() => {
+            dispatch(increment());
+          }}
+        >
+          +
+        </button>
+        <button
+          onClick={() => {
+            dispatch(decrement());
+          }}
+        >
+          +
+        </button>
+
+        <button
+          onClick={() => {
+            dispatch(login());
+          }}
+        >
+          Log In
+        </button>
 
         {isLogged ? <h3>valuable content</h3> : <h3>NO CONTENT</h3>}
+        {/* {isLogged ? <HomeElements /> : <h3>NO CONTENT</h3>} */}
 
-        <Counter />
+        {/* <Counter /> */}
 
-        <LogIns />
+        {/* <LogIns /> */}
       </div>
     </Aux>
   );
