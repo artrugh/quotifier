@@ -67,4 +67,16 @@ dataControllers.getSources = async (req, res) => {
   }
 };
 
+dataControllers.getQuotes = async (req, res) => {
+  try {
+    const currentUser = res.locals.user;
+    const quotes = await Quote.find({
+      user: `${currentUser.id}`,
+    });
+    res.status(200).json(quotes);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
 module.exports = dataControllers;
