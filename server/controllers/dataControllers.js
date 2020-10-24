@@ -58,7 +58,7 @@ dataControllers.addQuote = async (req, res) => {
 dataControllers.getSources = async (req, res) => {
   try {
     const currentUser = res.locals.user;
-    const sources = Source.find({
+    const sources = await Source.find({
       user: `${currentUser.id}`,
     });
     res.status(200).json(sources);
