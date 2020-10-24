@@ -28,20 +28,32 @@ dataControllers.addSource = async (req, res) => {
 
 dataControllers.addQuote = async (req, res) => {
   const currentUser = res.locals.user;
-  try {
-    const source = await Quote.create({
-      _id: new mongoose.Types.ObjectId(),
-      user: currentUser.id,
-      body: req.body.body,
-      tags: req.body.tags,
-      userNotes: req.body.userNotes,
-      location: req.body.location,
-      source: req.body.source,
+  Source.findById(req.body.sourceId)
+    .then((source) => {
+      if (source) {
+        const quote = new Quote({
+          _id: new mongoose.Types.ObjectId(),
+          user: currentUser.id,
+          body: req.body.body,
+          tags: req.body.tags,
+          userNotes: req.body.userNotes,
+          location: req.body.location,
+        });
+        quote.save();
+        source.quotes.push(quote);
+        source.save();
+        res.status(201).json(quote);
+      } else {
+        return res.status(404).json({
+          message: "Source Not Found",
+        });
+      }
+    })
+    .catch((err) => {
+      res.status(400).json({
+        message: err.message,
+      });
     });
-    res.status(201).json(quote);
-  } catch (err) {
-    res.status(400).json(err);
-  }
 };
 
 module.exports = dataControllers;

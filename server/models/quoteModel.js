@@ -9,7 +9,7 @@ const quoteSchema = Schema(
     tags: { type: Array },
     userNotes: { type: String },
     location: { type: String },
-    source: { type: Schema.Types.ObjectId, ref: "Source" },
+    sourceId: { type: Schema.Types.ObjectId, ref: "Source" },
   },
   { timestamps: true }
 );
