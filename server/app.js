@@ -1,8 +1,13 @@
 const express = require("express");
 const app = express();
-const morgan = require("morgan");
-const cookieParser = require("cookie-parser");
 const { requireAuth, checkUser } = require("./middleware/authMiddleware");
+
+// cross origin resource sharing
+// this allows requests from a domain outside of the server
+const cors = require("cors");
+app.use(cors());
+
+const morgan = require("morgan");
 app.use(morgan("dev"));
 
 // middleware
@@ -10,6 +15,8 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.raw());
+
+const cookieParser = require("cookie-parser");
 app.use(cookieParser());
 
 // connect database
@@ -26,13 +33,14 @@ mongoose
   });
 
 // routes
-app.get("*", checkUser);
+app.get("/check-me", checkUser);
 app.get("/_health", (req, res) => {
   res.status(200).send("ok");
 });
 const userRoutes = require("./routes/userRoutes");
 app.use(userRoutes);
 
+// this isn't part of app but shows how to set cookies
 app.get("/set-cookies", (req, res) => {
   // res.setHeader("Set-Cookie", "newUser=true");
   res.cookie("newUser", false);
