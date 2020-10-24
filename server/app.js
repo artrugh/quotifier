@@ -40,28 +40,31 @@ app.get("/_health", (req, res) => {
 const userRoutes = require("./routes/userRoutes");
 app.use(userRoutes);
 
+const dataRoutes = require("./routes/dataRoutes");
+app.use(dataRoutes);
+
 // this isn't part of app but shows how to set cookies
-app.get("/set-cookies", (req, res) => {
-  // res.setHeader("Set-Cookie", "newUser=true");
-  res.cookie("newUser", false);
-  res.cookie("userName", "faceboy");
-  //secure: true = https or else it won't save the cookie
-  // maxAge: 1000 * 60 * 60 * 24 = 1 day in miliseconds
-  res.cookie("isEmployee", true, { maxAge: 1000 * 60 * 60 * 24 });
-  res.send("you got the cookies");
-});
+// app.get("/set-cookies", (req, res) => {
+//   // res.setHeader("Set-Cookie", "newUser=true");
+//   res.cookie("newUser", false);
+//   res.cookie("userName", "faceboy");
+//   //secure: true = https or else it won't save the cookie
+//   // maxAge: 1000 * 60 * 60 * 24 = 1 day in miliseconds
+//   res.cookie("isEmployee", true, { maxAge: 1000 * 60 * 60 * 24 });
+//   res.send("you got the cookies");
+// });
 
 // how to read cookies
-app.get("/read-cookies", (req, res) => {
-  const cookies = req.cookies;
-  console.log(cookies);
-  res.json(cookies);
-});
+// app.get("/read-cookies", (req, res) => {
+//   const cookies = req.cookies;
+//   console.log(cookies);
+//   res.json(cookies);
+// });
 
 // test routes for authMiddleware.js
-app.get("/protected-route", requireAuth, (req, res) => {
-  res.status(200).send("you're OK");
-});
-app.get("/check-me", checkUser);
+// app.get("/protected-route", requireAuth, (req, res) => {
+//   res.status(200).send("you're OK");
+// });
+// app.get("/check-me", checkUser);
 
 module.exports = app;

@@ -64,11 +64,7 @@ userControllers.addUser = async (req, res) => {
   }
 };
 
-userControllers.login_get = (req, res) => {
-  res.status(200).send("login");
-};
-
-userControllers.login_post = async (req, res) => {
+userControllers.login = async (req, res) => {
   const { email, password } = req.body;
   try {
     const user = await User.login(email, password);
@@ -82,9 +78,9 @@ userControllers.login_post = async (req, res) => {
 };
 
 // logout creates a new JWT token that expires immediately
-userControllers.logout_get = (req, res) => {
+userControllers.logout = (req, res) => {
   res.cookie("jwt", "", { maxAge: 1 });
-  res.redirect("/login");
+  res.json("logged out");
 };
 
 module.exports = userControllers;
