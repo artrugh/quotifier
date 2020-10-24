@@ -1,8 +1,13 @@
 const express = require("express");
 const app = express();
-const morgan = require("morgan");
-const cookieParser = require("cookie-parser");
 const { requireAuth, checkUser } = require("./middleware/authMiddleware");
+
+// cross origin resource sharing
+// this allows requests from a domain outside of the server
+const cors = require("cors");
+app.use(cors());
+
+const morgan = require("morgan");
 app.use(morgan("dev"));
 
 // middleware
@@ -10,6 +15,8 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.raw());
+
+const cookieParser = require("cookie-parser");
 app.use(cookieParser());
 
 // connect database
@@ -26,31 +33,38 @@ mongoose
   });
 
 // routes
-app.get("*", checkUser);
+
 app.get("/_health", (req, res) => {
   res.status(200).send("ok");
 });
 const userRoutes = require("./routes/userRoutes");
 app.use(userRoutes);
 
-app.get("/set-cookies", (req, res) => {
-  // res.setHeader("Set-Cookie", "newUser=true");
-  res.cookie("newUser", false);
-  res.cookie("userName", "faceboy");
-  //secure: true = https or else it won't save the cookie
-  // maxAge: 1000 * 60 * 60 * 24 = 1 day in miliseconds
-  res.cookie("isEmployee", true, { maxAge: 1000 * 60 * 60 * 24 });
-  res.send("you got the cookies");
-});
+const dataRoutes = require("./routes/dataRoutes");
+app.use(dataRoutes);
 
-app.get("/read-cookies", (req, res) => {
-  const cookies = req.cookies;
-  console.log(cookies);
-  res.json(cookies);
-});
+// this isn't part of app but shows how to set cookies
+// app.get("/set-cookies", (req, res) => {
+//   // res.setHeader("Set-Cookie", "newUser=true");
+//   res.cookie("newUser", false);
+//   res.cookie("userName", "faceboy");
+//   //secure: true = https or else it won't save the cookie
+//   // maxAge: 1000 * 60 * 60 * 24 = 1 day in miliseconds
+//   res.cookie("isEmployee", true, { maxAge: 1000 * 60 * 60 * 24 });
+//   res.send("you got the cookies");
+// });
 
-app.get("/protected-route", requireAuth, (req, res) => {
-  res.status(200).send("you're OK");
-});
+// how to read cookies
+// app.get("/read-cookies", (req, res) => {
+//   const cookies = req.cookies;
+//   console.log(cookies);
+//   res.json(cookies);
+// });
+
+// test routes for authMiddleware.js
+// app.get("/protected-route", requireAuth, (req, res) => {
+//   res.status(200).send("you're OK");
+// });
+// app.get("/check-me", checkUser);
 
 module.exports = app;

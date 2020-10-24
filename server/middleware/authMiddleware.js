@@ -23,7 +23,7 @@ const requireAuth = (req, res, next) => {
   }
 };
 
-// check current user
+// check current logged in user
 
 const checkUser = (req, res, next) => {
   const token = req.cookies.jwt;
@@ -33,9 +33,8 @@ const checkUser = (req, res, next) => {
         console.log("not logged in");
         res.locals.user = null;
         console.log(err.message);
-        next();
+        res.end();
       } else {
-        console.log(decodedToken);
         let user = await User.findById(decodedToken.id);
         res.locals.user = user;
         next();
@@ -44,7 +43,7 @@ const checkUser = (req, res, next) => {
   } else {
     console.log("not logged in");
     res.locals.user = null;
-    next();
+    res.end();
   }
 };
 

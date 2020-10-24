@@ -34,7 +34,7 @@ const errorHandler = (err) => {
   return errors;
 };
 
-// 3 days in seconds
+// 3 days in seconds = 3 days * 24 hours * 60 mins * 60 seconds
 const maxAge = 3 * 24 * 60 * 60;
 const createToken = (id) => {
   return jwt.sign({ id }, `${SECRETTOKEN}`, {
@@ -51,7 +51,9 @@ userControllers.addUser = async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     });
+    // when user is created they should be logged in immediately so we send create and send a JWT
     const token = createToken(newUser._id);
+    //cookies use milliseconds so we have to multiply the maxAge by 1000
     res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
     res.status(201).json({ user: newUser.id });
   } catch (err) {
@@ -62,11 +64,7 @@ userControllers.addUser = async (req, res) => {
   }
 };
 
-userControllers.login_get = (req, res) => {
-  res.status(200).send("login");
-};
-
-userControllers.login_post = async (req, res) => {
+userControllers.login = async (req, res) => {
   const { email, password } = req.body;
   try {
     const user = await User.login(email, password);
@@ -79,9 +77,10 @@ userControllers.login_post = async (req, res) => {
   }
 };
 
-userControllers.logout_get = (req, res) => {
+// logout creates a new JWT token that expires immediately
+userControllers.logout = (req, res) => {
   res.cookie("jwt", "", { maxAge: 1 });
-  res.redirect("/login");
+  res.json("logged out");
 };
 
 module.exports = userControllers;
