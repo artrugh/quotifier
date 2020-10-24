@@ -33,7 +33,7 @@ mongoose
   });
 
 // routes
-app.get("/check-me", checkUser);
+
 app.get("/_health", (req, res) => {
   res.status(200).send("ok");
 });
@@ -51,14 +51,17 @@ app.get("/set-cookies", (req, res) => {
   res.send("you got the cookies");
 });
 
+// how to read cookies
 app.get("/read-cookies", (req, res) => {
   const cookies = req.cookies;
   console.log(cookies);
   res.json(cookies);
 });
 
+// test routes for authMiddleware.js
 app.get("/protected-route", requireAuth, (req, res) => {
   res.status(200).send("you're OK");
 });
+app.get("/check-me", checkUser);
 
 module.exports = app;
