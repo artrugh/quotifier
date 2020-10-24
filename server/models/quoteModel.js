@@ -6,7 +6,10 @@ const quoteSchema = Schema(
     _id: Schema.Types.ObjectId,
     user: { type: Schema.Types.ObjectId, ref: "User" },
     body: { type: String },
-    tags: { type: Array },
+    tags: {
+      type: Array,
+      default: undefined,
+    },
     userNotes: { type: String },
     location: { type: String },
     sourceId: { type: Schema.Types.ObjectId, ref: "Source" },

@@ -1,5 +1,6 @@
 const Source = require("../models/sourceModel");
 const Quote = require("../models/quoteModel");
+const User = require("../models/userModel");
 const mongoose = require("mongoose");
 dataControllers = {};
 
@@ -22,7 +23,7 @@ dataControllers.addSource = async (req, res) => {
     });
     res.status(201).json(source);
   } catch (err) {
-    res.status(400).json(err);
+    res.status(400).json({ message: err.message });
   }
 };
 
@@ -50,10 +51,20 @@ dataControllers.addQuote = async (req, res) => {
       }
     })
     .catch((err) => {
-      res.status(400).json({
-        message: err.message,
-      });
+      res.status(400).json({ message: err.message });
     });
+};
+
+dataControllers.getSources = async (req, res) => {
+  try {
+    const currentUser = res.locals.user;
+    const sources = Source.find({
+      user: `${currentUser.id}`,
+    });
+    res.status(200).json(sources);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
 };
 
 module.exports = dataControllers;

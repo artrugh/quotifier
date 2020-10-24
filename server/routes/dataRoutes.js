@@ -6,5 +6,7 @@ const { requireAuth, checkUser } = require("../middleware/authMiddleware");
 // addSource, updateSource, addQuote, updateQuote
 router.post("/addSource", checkUser, dataControllers.addSource);
 router.post("/addQuote", checkUser, dataControllers.addQuote);
+router.get("/getSources", checkUser, dataControllers.getSources);
+// router.get("/getQuotes", checkUser, dataControllers.getQuotes);
 
 module.exports = router;
