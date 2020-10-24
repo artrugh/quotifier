@@ -8,6 +8,7 @@ const sourceSchema = Schema(
     quotes: [{ type: Schema.Types.ObjectId, ref: "Quote" }],
     author: {
       type: Array,
+      default: undefined,
     },
     sourceTitle: {
       type: String,
@@ -19,12 +20,15 @@ const sourceSchema = Schema(
     },
     otherContributors: {
       type: Array,
+      default: undefined,
     },
     editor: {
       type: Array,
+      default: undefined,
     },
     translator: {
       type: Array,
+      default: undefined,
     },
     version: {
       type: String,
