@@ -12,7 +12,7 @@ const quoteSchema = Schema(
     },
     userNotes: { type: String },
     location: { type: String },
-    sourceId: { type: Schema.Types.ObjectId, ref: "Source" },
+    source: { type: String },
   },
   { timestamps: true }
 );

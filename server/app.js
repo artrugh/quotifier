@@ -38,10 +38,10 @@ app.get("/_health", (req, res) => {
   res.status(200).send("ok");
 });
 const userRoutes = require("./routes/userRoutes");
-app.use(userRoutes);
+app.use("/api/v1/users", userRoutes);
 
 const dataRoutes = require("./routes/dataRoutes");
-app.use(dataRoutes);
+app.use("/api/v1/data", dataRoutes);
 
 // this isn't part of app but shows how to set cookies
 // app.get("/set-cookies", (req, res) => {
