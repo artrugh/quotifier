@@ -43,6 +43,23 @@ app.use("/api/v1/users", userRoutes);
 const dataRoutes = require("./routes/dataRoutes");
 app.use("/api/v1/data", dataRoutes);
 
+// error handling
+
+app.use((req, res, next) => {
+  const error = new Error("Not found");
+  error.status = 404;
+  next(error);
+});
+
+app.use((error, req, res, next) => {
+  res.status(error.status || 500);
+  res.json({
+    error: {
+      message: error.message,
+    },
+  });
+});
+
 // this isn't part of app but shows how to set cookies
 // app.get("/set-cookies", (req, res) => {
 //   // res.setHeader("Set-Cookie", "newUser=true");
