@@ -29,7 +29,7 @@ dataControllers.addSource = async (req, res) => {
 
 dataControllers.addQuote = async (req, res) => {
   const currentUser = res.locals.user;
-  Source.findById(req.body.sourceId)
+  Source.findById(req.body.source)
     .then((source) => {
       if (source) {
         const quote = new Quote({
@@ -39,10 +39,22 @@ dataControllers.addQuote = async (req, res) => {
           tags: req.body.tags,
           userNotes: req.body.userNotes,
           location: req.body.location,
+          source: source.id,
         });
         quote.save();
         source.quotes.push(quote);
         source.save();
+        res.status(201).json(quote);
+      } else if (source === null) {
+        const quote = new Quote({
+          _id: new mongoose.Types.ObjectId(),
+          user: currentUser.id,
+          body: req.body.body,
+          tags: req.body.tags,
+          userNotes: req.body.userNotes,
+          location: req.body.location,
+        });
+        quote.save();
         res.status(201).json(quote);
       } else {
         return res.status(404).json({
