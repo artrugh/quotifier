@@ -3,6 +3,8 @@ import Aux from "./hoc/Aux";
 import { useSelector, useDispatch } from "react-redux";
 import HomeElements from "./components/HomeElements";
 import { increment, decrement, login } from "./actions";
+import AboutElements from "./components/AboutElements";
+
 
 function App() {
   // useSelector makes possible to access the whole state
@@ -50,6 +52,7 @@ function App() {
         {/* <LogIns /> */}
       </div>
     </Aux>
+
   );
 }
 
