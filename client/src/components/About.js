@@ -1,6 +1,6 @@
 import React from "react";
 
-const AboutElements = () => {
+function About() {
   return (
     <div className="about">
       <h2>About</h2>
@@ -9,6 +9,6 @@ const AboutElements = () => {
       <button>More InFo</button>
     </div>
   );
-};
+}
 
-export default AboutElements;
+export default About;

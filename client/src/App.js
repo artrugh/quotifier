@@ -7,25 +7,20 @@ import Nav from "./components/Nav";
 //----------------Routing--------------------------
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //---------------Aux-------------------------------
-import Aux from "./hoc/Aux";
 
 function App() {
   return (
-    <Aux>
-      <div className="App">
-        <h1>Quotes and Notes</h1>
-        <h1>Notes and Quotes</h1>
-        <h1>Quotifier</h1>
+    <Router>
+      <div className="app">
         <Nav />
-        <Router>
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/About" component={About} />
-            <Route path="/Help" component={Help} />
-          </Switch>
-        </Router>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/Home" exact component={Home} />
+          <Route path="/About" component={About} />
+          <Route path="/Help" component={Help} />
+        </Switch>
       </div>
-    </Aux>
+    </Router>
   );
 }
 
