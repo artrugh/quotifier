@@ -1,17 +1,58 @@
 import React from "react";
+import Aux from "./hoc/Aux";
+import { useSelector, useDispatch } from "react-redux";
+import HomeElements from "./components/HomeElements";
+import { increment, decrement, login } from "./actions";
 import AboutElements from "./components/AboutElements";
 
+
 function App() {
+  // useSelector makes possible to access the whole state
+  const counter = useSelector((state) => state.counter);
+  const isLogged = useSelector((state) => state.isLogged);
+  const dispatch = useDispatch();
   return (
-    <div className="App">
-      <h1>Quotes and Notes</h1>
+    <Aux>
+      <div className="App">
+        <h1>Quotes and Notes</h1>
 
-      <h1>Notes and Quotes</h1>
+        <h1>Notes and Quotes</h1>
 
-      <h1>Quotifier</h1>
+        <h1>Quotifier</h1>
 
-      <AboutElements />
-    </div>
+        <h1>Counter {counter}</h1>
+        <button
+          onClick={() => {
+            dispatch(increment());
+          }}
+        >
+          +
+        </button>
+        <button
+          onClick={() => {
+            dispatch(decrement());
+          }}
+        >
+          +
+        </button>
+
+        <button
+          onClick={() => {
+            dispatch(login());
+          }}
+        >
+          Log In
+        </button>
+
+        {/* {isLogged ? <h3>valuable content</h3> : <h3>NO CONTENT</h3>} */}
+        {isLogged ? <HomeElements /> : <h3>NO CONTENT</h3>}
+
+        {/* <Counter /> */}
+
+        {/* <LogIns /> */}
+      </div>
+    </Aux>
+
   );
 }
 
