@@ -2,7 +2,15 @@
 # content-type: application/json
 
 # {
-#   "email": "email@email.com",
+#   "email": "email2@email2.com",
+#   "password": "123456"
+# }
+
+# POST http://localhost:5000/api/v1/users/register
+# content-type: application/json
+
+# {
+#   "email": "email2@email2.com",
 #   "password": "123456"
 # }
 
@@ -19,12 +27,13 @@
 # content-type: application/json
 
 # {
-
+#  "sourceTitle": "New Source That We Just Created"
 # }
 
 # POST http://localhost:5000/api/v1/data/addQuote
 # content-type: application/json
 
 # {
-  # "body": ""
+#   "body": "This is a brand new quote we just added another.",
+#   "tags": ["quotes", "notes"]
 # }

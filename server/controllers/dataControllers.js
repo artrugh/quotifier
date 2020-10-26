@@ -15,7 +15,7 @@ dataControllers.addSource = async (req, res) => {
       containerTitle: req.body.containerTitle,
       otherContributors: req.body.otherContributors,
       editor: req.body.editor,
-      translator: req.body.tranlsator,
+      translator: req.body.translator,
       version: req.body.version,
       number: req.body.number,
       publisher: req.body.publisher,

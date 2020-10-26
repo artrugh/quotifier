@@ -8,7 +8,7 @@ app.use(morgan("dev"));
 const cors = require("cors");
 app.use(cors());
 
-// middleware
+// middleware to parse json and cookies
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -78,6 +78,7 @@ app.use((error, req, res, next) => {
 // });
 
 //test routes for authMiddleware.js
+
 // app.get("/protected-route", requireAuth, (req, res) => {
 //   res.status(200).send("you're OK");
 // });
