@@ -1,0 +1,30 @@
+# POST http://localhost:5000/api/v1/users/login
+# content-type: application/json
+
+# {
+#   "email": "email@email.com",
+#   "password": "123456"
+# }
+
+# GET http://localhost:5000/api/v1/users/logout
+# content-type: application/json
+
+# GET http://localhost:5000/api/v1/data/getSources
+# content-type: application/json
+
+# GET http://localhost:5000/api/v1/data/getQuotes
+# content-type: application/json
+
+# POST http://localhost:5000/api/v1/data/addSource
+# content-type: application/json
+
+# {
+
+# }
+
+# POST http://localhost:5000/api/v1/data/addQuote
+# content-type: application/json
+
+# {
+  # "body": ""
+# }

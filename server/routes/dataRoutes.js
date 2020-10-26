@@ -8,6 +8,5 @@ router.post("/addSource", checkUser, dataControllers.addSource);
 router.post("/addQuote", checkUser, dataControllers.addQuote);
 router.get("/getSources", checkUser, dataControllers.getSources);
 router.get("/getQuotes", checkUser, dataControllers.getQuotes);
-// router.get("/getQuotes", checkUser, dataControllers.getQuotes);
 
 module.exports = router;

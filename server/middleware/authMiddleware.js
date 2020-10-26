@@ -19,7 +19,6 @@ const requireAuth = (req, res, next) => {
     });
   } else {
     console.log("not logged in");
-    res.redirect("/login");
   }
 };
 
@@ -32,7 +31,7 @@ const checkUser = (req, res, next) => {
       if (err) {
         console.log("not logged in");
         res.locals.user = null;
-        console.log(err.message);
+        res.json({ message: "not logged in" });
         res.end();
       } else {
         let user = await User.findById(decodedToken.id);
@@ -42,6 +41,7 @@ const checkUser = (req, res, next) => {
     });
   } else {
     console.log("not logged in");
+    res.json({ message: "not logged in" });
     res.locals.user = null;
     res.end();
   }

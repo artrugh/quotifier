@@ -1,14 +1,12 @@
 const express = require("express");
 const app = express();
 const { requireAuth, checkUser } = require("./middleware/authMiddleware");
-
+const morgan = require("morgan");
+app.use(morgan("dev"));
 // cross origin resource sharing
 // this allows requests from a domain outside of the server
 const cors = require("cors");
 app.use(cors());
-
-const morgan = require("morgan");
-app.use(morgan("dev"));
 
 // middleware
 const bodyParser = require("body-parser");
@@ -37,6 +35,7 @@ mongoose
 app.get("/_health", (req, res) => {
   res.status(200).send("ok");
 });
+
 const userRoutes = require("./routes/userRoutes");
 app.use("/api/v1/users", userRoutes);
 
@@ -78,10 +77,11 @@ app.use((error, req, res, next) => {
 //   res.json(cookies);
 // });
 
-// test routes for authMiddleware.js
+//test routes for authMiddleware.js
 // app.get("/protected-route", requireAuth, (req, res) => {
 //   res.status(200).send("you're OK");
 // });
+
 // app.get("/check-me", checkUser);
 
 module.exports = app;
