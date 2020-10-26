@@ -1,13 +1,11 @@
 import React from "react";
 import Aux from "./hoc/Aux";
 import { useSelector, useDispatch } from "react-redux";
-import HomeElements from "./components/HomeElements";
+import Home from "./components/Home";
 import { increment, decrement, login } from "./actions";
-import AboutElements from "./components/AboutElements";
-
+import About from "./components/About";
 
 function App() {
-
   // useSelector makes possible to access the whole state
   const counter = useSelector((state) => state.counter);
   const isLogged = useSelector((state) => state.isLogged);
@@ -46,16 +44,14 @@ function App() {
         </button>
 
         {/* {isLogged ? <h3>valuable content</h3> : <h3>NO CONTENT</h3>} */}
-        {isLogged ? <HomeElements /> : <h3>NO CONTENT</h3>}
+        {isLogged ? <Home /> : <h3>NO CONTENT</h3>}
 
         {/* <Counter /> */}
 
         {/* <LogIns /> */}
       </div>
     </Aux>
-
   );
-
 }
 
 export default App;
