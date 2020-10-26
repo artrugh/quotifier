@@ -6,7 +6,10 @@ import { createStore } from "redux";
 import { Provider } from "react-redux"; // app is wrapped by provider and so it is connected to redux
 import allReducer from "./reducers";
 
-const store = createStore(allReducer);
+const store = createStore(
+  allReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDOM.render(
   <React.StrictMode>
