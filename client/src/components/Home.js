@@ -1,12 +1,13 @@
 import React from "react";
 
-const signIn = (props) => {
+function home() {
   return (
-    <div>
-      <h1>HOME PAGE</h1>
-      <h3>valuable info</h3>{" "}
+    <div className="home">
+      <h2>Welcome to Quotify</h2>
     </div>
   );
-};
+}
 
-export default signIn;
+export default home;
+
+

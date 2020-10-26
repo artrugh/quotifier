@@ -1,21 +1,35 @@
 import React from "react";
+//--------------components----------------------------
+import About from "./components/About";
+import Home from "./components/Home";
+import Help from "./components/Help";
+import Nav from "./components/Nav";
+import ReduxButtonTestLogin from "./components/ReduxButtonTestLogin";
+//----------------Routing--------------------------
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //----------------redux-----------------------------------
 import { useSelector } from "react-redux";
-//----------------components-----------------------------------
-import Home from "./components/Home";
-import ReduxButtonTestLogin from "./components/ReduxButtonTestLogin";
+//---------------Aux-------------------------------
 import Aux from "./hoc/Aux";
 
+
 function App() {
-  const isLogged = useSelector((state) => state.isLogged);
+    const isLogged = useSelector((state) => state.isLogged);
 
   return (
-    <Aux>
-      <div className="App">
-        <ReduxButtonTestLogin />
+    <Router>
+      <div className="app">
+        <Nav />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/Home" exact component={Home} />
+          <Route path="/About" component={About} />
+          <Route path="/Help" component={Help} />
+        </Switch>
+       <ReduxButtonTestLogin />
         {isLogged ? <Home /> : <h3>NO CONTENT</h3>}
       </div>
-    </Aux>
+    </Router>
   );
 }
 
