@@ -1,7 +1,7 @@
 import React from "react";
 //--------------components----------------------------
-import AboutElements from "./components/AboutElements";
-import HomeElements from "./components/HomeElements";
+import About from "./components/About";
+import Home from "./components/Home";
 import Help from "./components/Help";
 import Nav from "./components/Nav";
 //----------------Routing--------------------------
@@ -11,29 +11,21 @@ import Aux from "./hoc/Aux";
 
 function App() {
   return (
-<<<<<<< HEAD
-    <div className="App">
-      <AboutElements />
-      <Help />
-      <Nav />
-    </div>
-=======
     <Aux>
       <div className="App">
-        {/* <h1>Quotes and Notes</h1>
+        <h1>Quotes and Notes</h1>
         <h1>Notes and Quotes</h1>
-        <h1>Quotifier</h1> */}
-        {/* <Nav />
+        <h1>Quotifier</h1>
+        <Nav />
         <Router>
           <Switch>
-            <Route path="/" exact component={HomeElements} />
-            <Route path="/About" component={AboutElements} />
+            <Route path="/" exact component={Home} />
+            <Route path="/About" component={About} />
             <Route path="/Help" component={Help} />
           </Switch>
-        </Router> */}
+        </Router>
       </div>
     </Aux>
->>>>>>> 65c0b89245be1c1f9ef261d02cf9511d1c6ebdf7
   );
 }
 

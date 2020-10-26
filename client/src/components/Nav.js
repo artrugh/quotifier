@@ -1,6 +1,6 @@
 import React from "react";
 //---------Routing-------------------------------
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 //---------Routing-------------------------------
 import Aux from "../hoc/Aux";
 
@@ -8,7 +8,7 @@ const Nav = (props) => {
   return (
     <Aux>
       <div className="nav_container">
-        {/* <ul>
+        <ul>
           <li>
             <Link to="/Home">Home</Link>
           </li>
@@ -21,7 +21,7 @@ const Nav = (props) => {
           <li>
             <Link to="/SignIn">Sign In</Link>
           </li>
-        </ul> */}
+        </ul>
       </div>
     </Aux>
   );
