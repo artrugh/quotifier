@@ -7,6 +7,7 @@ import AboutElements from "./components/AboutElements";
 
 
 function App() {
+
   // useSelector makes possible to access the whole state
   const counter = useSelector((state) => state.counter);
   const isLogged = useSelector((state) => state.isLogged);
@@ -54,6 +55,7 @@ function App() {
     </Aux>
 
   );
+
 }
 
 export default App;
