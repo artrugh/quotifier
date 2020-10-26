@@ -1,7 +1,7 @@
 import React from "react";
 import Aux from "./hoc/Aux";
 import { useSelector, useDispatch } from "react-redux";
-import HomeElements from "react";
+import HomeElements from "./components/HomeElements";
 import { increment, decrement, login } from "./actions";
 
 function App() {
@@ -42,8 +42,8 @@ function App() {
           Log In
         </button>
 
-        {isLogged ? <h3>valuable content</h3> : <h3>NO CONTENT</h3>}
-        {/* {isLogged ? <HomeElements /> : <h3>NO CONTENT</h3>} */}
+        {/* {isLogged ? <h3>valuable content</h3> : <h3>NO CONTENT</h3>} */}
+        {isLogged ? <HomeElements /> : <h3>NO CONTENT</h3>}
 
         {/* <Counter /> */}
 
