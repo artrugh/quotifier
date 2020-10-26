@@ -1,5 +1,11 @@
-// import React from "react";
+import React from "react";
 
-// const signIn = (props) => <button onClick={props.signedIn}>Sign In</button>;
+function SignIn() {
+  return (
+    <div className="sign-in">
+      <h2>please sign in here</h2>
+    </div>
+  );
+}
 
-// export default signIn;
+export default SignIn;

@@ -6,7 +6,7 @@ const ReduxButtonTestCounter = (props) => {
   const dispatch = useDispatch();
 
   return (
-    <div>
+    <div className="redux-button-login">
       <button
         onClick={() => {
           dispatch(login());
