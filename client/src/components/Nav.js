@@ -9,17 +9,17 @@ function Nav() {
         <li className="nav-link home-link">
           <Link to="/Home">Home</Link>
         </li>
-        <li className="nav-link about-link">
+        {/* <li className="nav-link about-link">
           <Link to="/About">About</Link>
         </li>
         <li className="nav-link help-link">
           <Link to="/Help">Help</Link>
-        </li>
+        </li> */}
         <li className="nav-link sign-in-link">
-          <Link to="/SignIn">Sign In</Link>
+          <Link to="/SignIn">Sign in</Link>
         </li>
         <li className="nav-link sign-up-link">
-          <Link to="/SignIn">Sign Up</Link>
+          <Link to="/SignIn">Sign up</Link>
         </li>
       </ul>
     </div>
