@@ -81,4 +81,28 @@ userControllers.logout = (req, res) => {
   res.json("logged out");
 };
 
+userControllers.updateUser = async (req, res) => {
+  const currentUser = res.locals.user;
+  if (req.body.userFirst != null) {
+    currentUser.userFirst = req.body.userFirst;
+  }
+  if (req.body.userLast != null) {
+    currentUser.userLast = req.body.userLast;
+  }
+  if (req.body.email != null) {
+    currentUser.email = req.body.email;
+  }
+  if (req.body.password != null) {
+    currentUser.password = req.body.password;
+  }
+  try {
+    await currentUser.save();
+    res.status(200).json({ message: "User updated" });
+  } catch (err) {
+    res.status(400).json({
+      message: err.message,
+    });
+  }
+};
+
 module.exports = userControllers;
