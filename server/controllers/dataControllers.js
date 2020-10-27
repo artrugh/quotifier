@@ -94,15 +94,26 @@ dataControllers.getQuotes = async (req, res) => {
 };
 
 dataControllers.updateQuote = async (req, res) => {
-  const quoteID = req.body.id;
-  let quote = await Quote.findById(req.body.id);
+  const currentQuote = req.locals.user;
+  if (req.body.userFirst != null) {
+    currentUser.userFirst = req.body.userFirst;
+  }
+  if (req.body.userLast != null) {
+    currentUser.userLast = req.body.userLast;
+  }
+  if (req.body.email != null) {
+    currentUser.email = req.body.email;
+  }
+  if (req.body.password != null) {
+    currentUser.password = req.body.password;
+  }
   try {
-    if (req.body.body != null) {
-      quote.body = req.body.body;
-    }
-    res.json(quote);
+    await currentUser.save();
+    res.status(200).json({ message: "User updated" });
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    res.status(400).json({
+      message: err.message,
+    });
   }
 };
 
