@@ -93,4 +93,17 @@ dataControllers.getQuotes = async (req, res) => {
   }
 };
 
+dataControllers.updateQuote = async (req, res) => {
+  const quoteID = req.body.id;
+  let quote = await Quote.findById(req.body.id);
+  try {
+    if (req.body.body != null) {
+      quote.body = req.body.body;
+    }
+    res.json(quote);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
 module.exports = dataControllers;
