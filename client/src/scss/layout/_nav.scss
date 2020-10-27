@@ -1,0 +1,17 @@
+.nav-container {
+  width: 100%;
+  background-color: rgb(148, 148, 148);
+  display: flex;
+  justify-content: right;
+}
+
+.nav-links {
+  background-color: pink;
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+}
+
+.nav-link {
+  margin: 0 2rem;
+}

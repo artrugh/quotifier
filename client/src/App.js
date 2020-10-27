@@ -1,58 +1,35 @@
 import React from "react";
-import Aux from "./hoc/Aux";
-import { useSelector, useDispatch } from "react-redux";
-import HomeElements from "./components/HomeElements";
-import { increment, decrement, login } from "./actions";
-import AboutElements from "./components/AboutElements";
-
+//--------------components----------------------------
+import About from "./components/About";
+import Home from "./components/Home";
+import Help from "./components/Help";
+import Nav from "./components/Nav";
+import ReduxButtonTestLogin from "./components/ReduxButtonTestLogin";
+import PersonalProfile from "./components/PersonalProfile";
+//----------------Routing--------------------------
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+//----------------redux-----------------------------------
+import { useSelector } from "react-redux";
+//---------------Aux-------------------------------
+// import Aux from "./hoc/Aux";
 
 function App() {
-  // useSelector makes possible to access the whole state
-  const counter = useSelector((state) => state.counter);
+  //------redux---------------------------------------
   const isLogged = useSelector((state) => state.isLogged);
-  const dispatch = useDispatch();
   return (
-    <Aux>
-      <div className="App">
-        <h1>Quotes and Notes</h1>
-
-        <h1>Notes and Quotes</h1>
-
-        <h1>Quotifier</h1>
-
-        <h1>Counter {counter}</h1>
-        <button
-          onClick={() => {
-            dispatch(increment());
-          }}
-        >
-          +
-        </button>
-        <button
-          onClick={() => {
-            dispatch(decrement());
-          }}
-        >
-          +
-        </button>
-
-        <button
-          onClick={() => {
-            dispatch(login());
-          }}
-        >
-          Log In
-        </button>
-
-        {/* {isLogged ? <h3>valuable content</h3> : <h3>NO CONTENT</h3>} */}
-        {isLogged ? <HomeElements /> : <h3>NO CONTENT</h3>}
-
-        {/* <Counter /> */}
-
-        {/* <LogIns /> */}
+    <Router>
+      <div className="app">
+        <Nav />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/Home" exact component={Home} />
+          <Route path="/About" component={About} />
+          <Route path="/Help" component={Help} />
+        </Switch>
+        <ReduxButtonTestLogin />
+        {isLogged ? <Home /> : <PersonalProfile />}
       </div>
-    </Aux>
-
+    </Router>
   );
 }
 
