@@ -131,7 +131,10 @@ dataControllers.updateQuote = async (req, res) => {
     if (req.body.location !== undefined) {
       quoteToUpdate.location = req.body.location;
     }
-    if (req.body.source !== undefined) {
+    if (
+      req.body.source !== undefined &&
+      req.body.source !== quoteToUpdate.source
+    ) {
       // if (quoteToUpdate.source !== undefined) {
       //   const deleteQuoteFrom = await Source.findOne({
       //     _id: quoteToUpdate.source,
