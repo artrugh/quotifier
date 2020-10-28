@@ -132,8 +132,18 @@ dataControllers.updateQuote = async (req, res) => {
       quoteToUpdate.location = req.body.location;
     }
     if (req.body.source !== undefined) {
+      // if (quoteToUpdate.source !== undefined) {
+      //   const deleteQuoteFrom = await Source.findOne({
+      //     _id: quoteToUpdate.source,
+      //   });
+      //   index = deleteQuoteFrom.quotes.indexOf(quoteToUpdate._id);
+      //   deleteQuoteFrom.quotes.splice(index, 1);
+      //   await deleteQuoteFrom.save();
+      // }
       quoteToUpdate.source = req.body.source;
       const sourceToUpdate = await Source.findOne({ _id: req.body.source });
+      sourceToUpdate.quotes.push(req.body._id);
+      await sourceToUpdate.save();
       console.log(sourceToUpdate);
     }
     await quoteToUpdate.save();

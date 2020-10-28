@@ -23,16 +23,22 @@
 # GET http://localhost:5000/api/v1/data/getQuotes
 # content-type: application/json
 
-# POST http://localhost:5000/api/v1/data/addSource
-# content-type: application/json
-
-PATCH http://localhost:5000/api/v1/data/update-quote
+POST http://localhost:5000/api/v1/data/addSource
 content-type: application/json
 
 {
-  "body": "a new update to the quote",
-  "_id": "5f954f75357c430cfe33270f"
+  "sourceTitle": "My extra extra Cool Source",
+  "author": "Me"
 }
+
+# PATCH http://localhost:5000/api/v1/data/update-quote
+# content-type: application/json
+
+# {
+#   "_id": "5f997a3d876f3d1878af37f2",
+#   "source": "5f9987f0bf48ed1c1fdd2007"
+
+# }
 
 # POST http://localhost:5000/api/v1/data/addQuote
 # content-type: application/json
