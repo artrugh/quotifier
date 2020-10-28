@@ -2,9 +2,32 @@
 .help,
 .home,
 .redux-button-login,
-.sign-in {
+.sign-in,
+.personal-profile {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+
+.about,
+.help,
+.home {
+  margin-top: 10rem;
+}
+
+.redux-button-login {
+  // border: 1px solid black;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  // position: absolute;
+}
+
+.text {
+  max-width: 20rem;
+  margin: 3rem;
+}
+
+.about-single-button {
+  margin: 1rem;
 }

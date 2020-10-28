@@ -1,0 +1,21 @@
+/* source-code-pro-regular - latin */
+@font-face {
+  font-family: "Source Code Pro";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../fonts/SourceCodePro-Light.ttf");
+}
+
+body {
+  font-family: "Source Code Pro", monospace;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+}

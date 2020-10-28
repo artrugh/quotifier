@@ -6,17 +6,20 @@ function Nav() {
   return (
     <div className="nav-container">
       <ul className="nav-links">
-        <li className="nav-link">
+        <li className="nav-link home-link">
           <Link to="/Home">Home</Link>
         </li>
-        <li className="nav-link">
+        <li className="nav-link about-link">
           <Link to="/About">About</Link>
         </li>
-        <li className="nav-link">
+        <li className="nav-link help-link">
           <Link to="/Help">Help</Link>
         </li>
-        <li className="nav-link">
-          <Link to="/SignIn">Sign In</Link>
+        <li className="nav-link sign-in-link">
+          <Link to="/SignIn">Sign in</Link>
+        </li>
+        <li className="nav-link sign-up-link">
+          <Link to="/SignIn">Sign up</Link>
         </li>
       </ul>
     </div>
