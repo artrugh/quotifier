@@ -26,9 +26,13 @@
 # POST http://localhost:5000/api/v1/data/addSource
 # content-type: application/json
 
-# {
-#  "sourceTitle": "New Source That We Just Created"
-# }
+PATCH http://localhost:5000/api/v1/data/update-quote
+content-type: application/json
+
+{
+  "body": "a new update to the quote",
+  "_id": "5f954f75357c430cfe33270f"
+}
 
 # POST http://localhost:5000/api/v1/data/addQuote
 # content-type: application/json

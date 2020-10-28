@@ -2,6 +2,7 @@ const Source = require("../models/sourceModel");
 const Quote = require("../models/quoteModel");
 const User = require("../models/userModel");
 const mongoose = require("mongoose");
+const { findById } = require("../models/userModel");
 dataControllers = {};
 
 dataControllers.addSource = async (req, res) => {
@@ -93,27 +94,52 @@ dataControllers.getQuotes = async (req, res) => {
   }
 };
 
+// dataControllers.updateQuote = async (req, res) => {
+//   const currentQuote = req.body._id;
+//   let quoteUpdate = {};
+//   if (req.body.body !== undefined) {
+//     quoteUpdate["body"] = req.body.body;
+//   }
+//   try {
+//     Quote.findOneAndUpdate({ _id: currentQuote }, quoteUpdate, {
+//       new: true,
+//     }).then((data) => {
+//       if (data === null) {
+//         throw new Error("quote not found");
+//       }
+//       res.json({ message: "Quote updated." });
+//       console.log("New quote data", data);
+//     });
+//   } catch (err) {
+//     res.status(500).json({ message: err.message });
+//   }
+// };
+
 dataControllers.updateQuote = async (req, res) => {
   const currentQuote = req.body._id;
-  if (req.body.userFirst != null) {
-    currentUser.userFirst = req.body.userFirst;
-  }
-  if (req.body.userLast != null) {
-    currentUser.userLast = req.body.userLast;
-  }
-  if (req.body.email != null) {
-    currentUser.email = req.body.email;
-  }
-  if (req.body.password != null) {
-    currentUser.password = req.body.password;
-  }
   try {
-    await currentUser.save();
-    res.status(200).json({ message: "User updated" });
+    const quoteToUpdate = await Quote.findOne({ _id: `${currentQuote}` });
+    if (req.body.body !== undefined) {
+      quoteToUpdate.body = req.body.body;
+    }
+    if (req.body.tags !== undefined) {
+      quoteToUpdate.tags = req.body.tags;
+    }
+    if (req.body.userNotes !== undefined) {
+      quoteToUpdate.userNotes = req.body.userNotes;
+    }
+    if (req.body.location !== undefined) {
+      quoteToUpdate.location = req.body.location;
+    }
+    if (req.body.source !== undefined) {
+      quoteToUpdate.source = req.body.source;
+      const sourceToUpdate = await Source.findOne({ _id: req.body.source });
+      console.log(sourceToUpdate);
+    }
+    await quoteToUpdate.save();
+    res.json(quoteToUpdate);
   } catch (err) {
-    res.status(400).json({
-      message: err.message,
-    });
+    res.status(500).json({ message: err.message });
   }
 };
 
