@@ -1,12 +1,15 @@
 import React from "react";
 
-function About() {
+function PersonalProfile() {
   return (
-    <div className="about">
+    <div className="personal-profile">
       <h2>Welcome User!</h2>
-      <p>bla bla bla </p>
+      <p className="text">
+        here you can implement all your quotes and find them every time you need
+        them just by clicking on the tags{" "}
+      </p>
     </div>
   );
 }
 
-export default About;
+export default PersonalProfile;
