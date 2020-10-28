@@ -94,7 +94,7 @@ dataControllers.getQuotes = async (req, res) => {
 };
 
 dataControllers.updateQuote = async (req, res) => {
-  const currentQuote = req.locals.user;
+  const currentQuote = req.body._id;
   if (req.body.userFirst != null) {
     currentUser.userFirst = req.body.userFirst;
   }
