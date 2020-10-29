@@ -59,8 +59,6 @@ userControllers.addUser = async (req, res) => {
   } catch (err) {
     const errors = errorHandler(err);
     res.status(400).json({ errors });
-    console.log(errors);
-    console.log(err);
   }
 };
 
@@ -70,7 +68,7 @@ userControllers.login = async (req, res) => {
     const user = await User.login(email, password);
     const token = createToken(user._id);
     res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
-    res.status(200).json({ user: user._id });
+    res.status(200).json({ user });
   } catch (err) {
     const errors = errorHandler(err);
     res.status(400).json({ errors });
@@ -81,6 +79,30 @@ userControllers.login = async (req, res) => {
 userControllers.logout = (req, res) => {
   res.cookie("jwt", "", { maxAge: 1 });
   res.json("logged out");
+};
+
+userControllers.updateUser = async (req, res) => {
+  const currentUser = res.locals.user;
+  if (req.body.userFirst != null) {
+    currentUser.userFirst = req.body.userFirst;
+  }
+  if (req.body.userLast != null) {
+    currentUser.userLast = req.body.userLast;
+  }
+  if (req.body.email != null) {
+    currentUser.email = req.body.email;
+  }
+  if (req.body.password != null) {
+    currentUser.password = req.body.password;
+  }
+  try {
+    await currentUser.save();
+    res.status(200).json({ message: "User updated" });
+  } catch (err) {
+    res.status(400).json({
+      message: err.message,
+    });
+  }
 };
 
 module.exports = userControllers;
