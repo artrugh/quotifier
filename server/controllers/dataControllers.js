@@ -95,15 +95,66 @@ dataControllers.getQuotes = async (req, res) => {
 };
 
 dataControllers.updateQuote = async (req, res, next) => {
+  const id = req.params.id;
+  const changes = req.body;
   try {
-    const id = req.params.id;
-    const quoteToChange = await Quote.findById(id, function (err, quote) {
-      if (err) {
-        console.log(err);
-      }
-      console.log(quote);
-    });
-    res.send(quoteToChange);
+    const quote = await Quote.quoteCheck(id);
+    if (req.body.body !== undefined) {
+      quote.body = changes.body;
+    }
+    if (req.body.tags !== undefined) {
+      quote.tags = changes.tags;
+    }
+    if (req.body.userNotes !== undefined) {
+      quote.userNotes = changes.userNotes;
+    }
+    if (req.body.location !== undefined) {
+      quote.location = changes.location;
+    }
+    await quote.save();
+    res.json(quote);
+  } catch (err) {
+    console.log(err.message);
+  }
+};
+
+dataControllers.updateSource = async (req, res, next) => {
+  const id = req.params.id;
+  const changes = req.body;
+  try {
+    const source = await Source.sourceCheck(id);
+    if (req.body.author !== undefined) {
+      source.author = changes.author;
+    }
+    if (req.body.sourceTitle !== undefined) {
+      source.sourceTitle = changes.sourceTitle;
+    }
+    if (req.body.containerTitle !== undefined) {
+      source.containerTitle = changes.containerTitle;
+    }
+    if (req.body.otherContributors !== undefined) {
+      source.otherContributors = changes.otherContributors;
+    }
+    if (req.body.editor !== undefined) {
+      source.editor = changes.editor;
+    }
+    if (req.body.translator !== undefined) {
+      source.translator = changes.translator;
+    }
+    if (req.body.version !== undefined) {
+      source.version = changes.version;
+    }
+    if (req.body.number !== undefined) {
+      source.number = changes.number;
+    }
+    if (req.body.publisher !== undefined) {
+      source.publisher = changes.publisher;
+    }
+    if (req.body.pubDate !== undefined) {
+      source.editor = changes.pubDate;
+    }
+    await source.save();
+    res.json(source);
   } catch (err) {
     console.log(err.message);
   }

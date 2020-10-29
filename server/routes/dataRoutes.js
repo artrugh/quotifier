@@ -8,6 +8,7 @@ router.post("/addSource", checkUser, dataControllers.addSource);
 router.post("/addQuote", checkUser, dataControllers.addQuote);
 router.get("/getSources", checkUser, dataControllers.getSources);
 router.get("/getQuotes", checkUser, dataControllers.getQuotes);
-router.patch("/:id", dataControllers.updateQuote);
+router.patch("/updateQuote/:id", dataControllers.updateQuote);
+router.patch("/updateSource/:id", dataControllers.updateSource);
 
 module.exports = router;

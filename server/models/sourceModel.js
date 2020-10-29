@@ -50,5 +50,14 @@ const sourceSchema = Schema(
   { timestamps: true }
 );
 
+// static method to make sure object exists
+sourceSchema.statics.sourceCheck = async function (id) {
+  const source = await this.findById(id);
+  if (source) {
+    return source;
+  }
+  throw Error("Source Does Not Exist");
+};
+
 const Source = mongoose.model("Source", sourceSchema);
 module.exports = Source;

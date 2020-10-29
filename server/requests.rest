@@ -31,12 +31,21 @@
 #   "author": "Me"
 # }
 
-PATCH http://localhost:5000/api/v1/data/5f9a686713a4d004faed6797
-content-type: application/json
+# PATCH http://localhost:5000/api/v1/data/updateQuote/5f9a686713a4d004faed6797
+# content-type: application/json
 
-{
-  
-}
+# {
+#   "body": "changing the quote",
+#   "location": "page 45",
+#   "tags": ["fund", "dogs", "moose"]
+# }
+
+# PATCH http://localhost:5000/api/v1/data/updateSource/5f99887777cc491c6a6bff1e
+# content-type: application/json
+
+# {
+#   "translator": ["doctor marble", "face man"]
+# }
 
 # POST http://localhost:5000/api/v1/data/addQuote
 # content-type: application/json
