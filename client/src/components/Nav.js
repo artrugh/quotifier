@@ -7,19 +7,19 @@ function Nav() {
     <div className="nav-container">
       <ul className="nav-links">
         <li className="nav-link home-link">
-          <Link to="/Home">Home</Link>
+          <Link to="/">Home</Link>
         </li>
         <li className="nav-link about-link">
-          <Link to="/About">About</Link>
+          <Link to="/about">About</Link>
         </li>
         <li className="nav-link help-link">
-          <Link to="/Help">Help</Link>
+          <Link to="/help">Help</Link>
         </li>
         <li className="nav-link sign-in-link">
-          <Link to="/SignIn">Sign in</Link>
+          <Link to="/login">Sign in</Link>
         </li>
         <li className="nav-link sign-up-link">
-          <Link to="/SignIn">Sign up</Link>
+          <Link to="/register">Sign up</Link>
         </li>
       </ul>
     </div>
