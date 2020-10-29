@@ -16,7 +16,7 @@ function Nav() {
           <Link to="/Help">Help</Link>
         </li>
         <li className="nav-link sign-in-link">
-          <Link to="/SignIn">Sign in</Link>
+          <Link to="/login">Sign in</Link>
         </li>
         <li className="nav-link sign-up-link">
           <Link to="/SignIn">Sign up</Link>
