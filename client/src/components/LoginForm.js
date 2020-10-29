@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 const axios = require("axios");
 
@@ -24,8 +24,10 @@ const LoginForm = () => {
         setRedirect(true);
       })
       .catch((error) => {
-        console.log(error);
         console.log(error.response);
+        alert(
+          `${error.response.data.errors.email} ${error.response.data.errors.password}`
+        );
       });
   };
 
@@ -35,7 +37,7 @@ const LoginForm = () => {
   };
 
   if (redirect) {
-    return <Redirect to="/" />;
+    return <Redirect to="/workspace" />;
   }
 
   return (
