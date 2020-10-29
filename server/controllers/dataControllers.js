@@ -94,6 +94,21 @@ dataControllers.getQuotes = async (req, res) => {
   }
 };
 
+dataControllers.updateQuote = async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    const quoteToChange = await Quote.findById(id, function (err, quote) {
+      if (err) {
+        console.log(err);
+      }
+      console.log(quote);
+    });
+    res.send(quoteToChange);
+  } catch (err) {
+    console.log(err.message);
+  }
+};
+
 // dataControllers.updateQuote = async (req, res) => {
 //   const currentQuote = req.body._id;
 //   let quoteUpdate = {};
@@ -115,37 +130,37 @@ dataControllers.getQuotes = async (req, res) => {
 //   }
 // };
 
-dataControllers.updateQuote = async (req, res) => {
-  const currentQuote = req.body._id;
-  try {
-    const quoteToUpdate = await Quote.findOne({ _id: `${currentQuote}` });
-    if (req.body.body !== undefined) {
-      quoteToUpdate.body = req.body.body;
-    }
-    if (req.body.tags !== undefined) {
-      quoteToUpdate.tags = req.body.tags;
-    }
-    if (req.body.userNotes !== undefined) {
-      quoteToUpdate.userNotes = req.body.userNotes;
-    }
-    if (req.body.location !== undefined) {
-      quoteToUpdate.location = req.body.location;
-    }
-    if (
-      req.body.source !== undefined &&
-      req.body.source !== quoteToUpdate.source
-    ) {
-      quoteToUpdate.source = req.body.source;
-      const sourceToUpdate = await Source.findOne({ _id: req.body.source });
-      sourceToUpdate.quotes.push(req.body._id);
-      await sourceToUpdate.save();
-      console.log(sourceToUpdate);
-    }
-    await quoteToUpdate.save();
-    res.json(quoteToUpdate);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-};
+// dataControllers.updateQuote = async (req, res) => {
+//   const currentQuote = req.body._id;
+//   try {
+//     const quoteToUpdate = await Quote.findOne({ _id: `${currentQuote}` });
+//     if (req.body.body !== undefined) {
+//       quoteToUpdate.body = req.body.body;
+//     }
+//     if (req.body.tags !== undefined) {
+//       quoteToUpdate.tags = req.body.tags;
+//     }
+//     if (req.body.userNotes !== undefined) {
+//       quoteToUpdate.userNotes = req.body.userNotes;
+//     }
+//     if (req.body.location !== undefined) {
+//       quoteToUpdate.location = req.body.location;
+//     }
+//     if (
+//       req.body.source !== undefined &&
+//       req.body.source !== quoteToUpdate.source
+//     ) {
+//       quoteToUpdate.source = req.body.source;
+//       const sourceToUpdate = await Source.findOne({ _id: req.body.source });
+//       sourceToUpdate.quotes.push(req.body._id);
+//       await sourceToUpdate.save();
+//       console.log(sourceToUpdate);
+//     }
+//     await quoteToUpdate.save();
+//     res.json(quoteToUpdate);
+//   } catch (err) {
+//     res.status(500).json({ message: err.message });
+//   }
+// };
 
 module.exports = dataControllers;
