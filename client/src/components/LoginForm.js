@@ -48,6 +48,7 @@ const LoginForm = () => {
     <form onSubmit={handleSubmit}>
       <input
         type="email"
+        name="email"
         className="input"
         onChange={(e) => setEmail(e.target.value)}
         placeholder="email"
@@ -55,6 +56,7 @@ const LoginForm = () => {
       />
       <input
         type="password"
+        name="password"
         className="input"
         onChange={(e) => setPassword(e.target.value)}
         placeholder="password"
