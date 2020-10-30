@@ -7,6 +7,8 @@ const axios = require("axios");
 const LogOutButton = () => {
   const [redirect, setRedirect] = useState(null);
 
+  const dispatch = useDispatch();
+
   const options = {
     url: "/api/v1/users/logout",
     mode: "cors",
@@ -20,6 +22,7 @@ const LogOutButton = () => {
     axios(options)
       .then((response) => {
         console.log(response);
+        dispatch(login());
         setRedirect(true);
       })
       .catch((error) => {
