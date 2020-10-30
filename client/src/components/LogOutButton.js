@@ -7,7 +7,6 @@ const axios = require("axios");
 const LogOutButton = () => {
   const [redirect, setRedirect] = useState(null);
 
-  const dispatch = useDispatch();
   const options = {
     url: "/api/v1/users/logout",
     mode: "cors",
@@ -35,7 +34,7 @@ const LogOutButton = () => {
 
   return (
     <React.Fragment>
-      <button type="submit" value="Logout" onclick={logout}>
+      <button type="type" value="Logout" onClick={logout}>
         Logout
       </button>
     </React.Fragment>
