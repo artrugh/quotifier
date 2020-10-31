@@ -6,8 +6,6 @@ import Help from "./components/Help";
 import Nav from "./components/Nav";
 import LogIn from "./components/LogIn";
 import Workspace from "./components/Workspace";
-import ReduxButtonTestLogin from "./components/ReduxButtonTestLogin";
-import PersonalProfile from "./components/PersonalProfile";
 //----------------Routing--------------------------
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //----------------redux-----------------------------------

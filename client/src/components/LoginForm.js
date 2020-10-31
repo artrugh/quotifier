@@ -52,6 +52,7 @@ const LoginForm = () => {
         className="input"
         onChange={(e) => setEmail(e.target.value)}
         placeholder="email"
+        autocomplete="on"
         required
       />
       <input
@@ -60,6 +61,7 @@ const LoginForm = () => {
         className="input"
         onChange={(e) => setPassword(e.target.value)}
         placeholder="password"
+        autocomplete="on"
         required
       />
       <button type="submit" value="Submit">
