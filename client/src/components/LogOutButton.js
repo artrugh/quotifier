@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import { login } from "../actions";
+import { logout } from "../actions";
 import { useDispatch } from "react-redux";
 const axios = require("axios");
 
@@ -18,11 +18,11 @@ const LogOutButton = () => {
     },
   };
 
-  const logout = () => {
+  const logoutUser = () => {
     axios(options)
       .then((response) => {
         console.log(response);
-        dispatch(login());
+        dispatch(logout());
         setRedirect(true);
       })
       .catch((error) => {
@@ -37,7 +37,7 @@ const LogOutButton = () => {
 
   return (
     <React.Fragment>
-      <button type="type" value="Logout" onClick={logout}>
+      <button type="type" value="Logout" onClick={logoutUser}>
         Logout
       </button>
     </React.Fragment>
