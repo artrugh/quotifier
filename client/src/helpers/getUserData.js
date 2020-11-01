@@ -19,3 +19,23 @@ export const getSources = () => {
     });
   return data;
 };
+
+export const getQuotes = () => {
+  const sourceOptions = {
+    url: "/api/v1/data/getQuotes",
+    mode: "cors",
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  let data = [];
+  axios(sourceOptions)
+    .then((response) => {
+      data.push(response.data);
+    })
+    .catch((error) => {
+      console.log(error.response);
+    });
+  return data;
+};

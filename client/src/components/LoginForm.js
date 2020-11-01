@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import { login, userSources, getUser } from "../actions";
+import { login, userSources, getUser } from "../redux/actions";
 import { useDispatch } from "react-redux";
 import { getSources } from "../helpers/getUserData";
 const axios = require("axios");
