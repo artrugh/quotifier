@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import { login } from "../actions";
+import { login, userSources } from "../actions";
 import { useDispatch } from "react-redux";
 const axios = require("axios");
 
@@ -25,6 +25,7 @@ const LoginForm = () => {
       .then((response) => {
         console.log(response);
         dispatch(login());
+        dispatch();
         setRedirect(true);
       })
       .catch((error) => {
