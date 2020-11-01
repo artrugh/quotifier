@@ -2,15 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 //----------redux----------------------
-import { createStore } from "redux";
+import { createStore, compose, applyMiddleware } from "redux";
 import { Provider } from "react-redux"; // app is wrapped by provider and so it is connected to redux
-import allReducer from "./reducers";
+import thunk from "redux-thunk";
+import rootReducer from "./redux/reducers/index";
 //----------css-sass----------------------
 import "./scss/main.scss";
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 const store = createStore(
-  allReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  rootReducer,
+  composeEnhancers(applyMiddleware(thunk))
 );
 
 ReactDOM.render(

@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
+import { login, userSources, getUser } from "../redux/actions";
+import { useDispatch } from "react-redux";
+import { getSources } from "../helpers/getUserData";
 const axios = require("axios");
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [redirect, setRedirect] = useState(null);
+  const dispatch = useDispatch();
 
   const options = {
     url: "/api/v1/users/login",
@@ -20,7 +24,11 @@ const LoginForm = () => {
   const submitForm = () => {
     axios(options)
       .then((response) => {
-        console.log(response);
+        let user = response.data.user;
+        dispatch(getUser(user));
+        dispatch(login());
+        const sources = getSources();
+        dispatch(userSources(sources));
         setRedirect(true);
       })
       .catch((error) => {
@@ -44,16 +52,20 @@ const LoginForm = () => {
     <form onSubmit={handleSubmit}>
       <input
         type="email"
+        name="email"
         className="input"
         onChange={(e) => setEmail(e.target.value)}
         placeholder="email"
+        autoComplete="on"
         required
       />
       <input
         type="password"
+        name="password"
         className="input"
         onChange={(e) => setPassword(e.target.value)}
         placeholder="password"
+        autoComplete="on"
         required
       />
       <button type="submit" value="Submit">
