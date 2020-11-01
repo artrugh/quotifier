@@ -12,7 +12,7 @@ export const getSources = () => {
   let data = [];
   axios(sourceOptions)
     .then((response) => {
-      data.push(response.data);
+      data.push(response.data[0]);
       console.log(data);
     })
     .catch((error) => {
