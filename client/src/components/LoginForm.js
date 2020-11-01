@@ -29,7 +29,6 @@ const LoginForm = () => {
         dispatch(login());
         const sources = getSources();
         dispatch(userSources(sources));
-        // dispatch(userSources(sources.data));
         setRedirect(true);
       })
       .catch((error) => {

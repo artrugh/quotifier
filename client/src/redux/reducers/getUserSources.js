@@ -1,7 +1,7 @@
-const sourcesReducer = (state = null, action) => {
+const sourcesReducer = (state = {}, action) => {
   switch (action.type) {
     case "USER_SOURCES":
-      return action.payload;
+      return { sources: action.payload };
     default:
       return state;
   }

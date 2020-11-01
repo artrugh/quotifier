@@ -13,6 +13,7 @@ export const getSources = () => {
   axios(sourceOptions)
     .then((response) => {
       data.push(response.data);
+      console.log(data);
     })
     .catch((error) => {
       console.log(error.response);
@@ -21,7 +22,7 @@ export const getSources = () => {
 };
 
 export const getQuotes = () => {
-  const sourceOptions = {
+  const quoteOptions = {
     url: "/api/v1/data/getQuotes",
     mode: "cors",
     method: "GET",
@@ -29,10 +30,10 @@ export const getQuotes = () => {
       "Content-Type": "application/json",
     },
   };
-  let data = [];
-  axios(sourceOptions)
+  let data = { quotes: null };
+  axios(quoteOptions)
     .then((response) => {
-      data.push(response.data);
+      data.quotes(response.data);
     })
     .catch((error) => {
       console.log(error.response);
