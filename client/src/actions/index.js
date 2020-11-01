@@ -21,3 +21,10 @@ export const logout = () => {
     type: "SIGN_OUT",
   };
 };
+
+export const userSources = (sources) => {
+  return {
+    type: "USER_SOURCES",
+    payload: sources,
+  };
+};
