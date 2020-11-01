@@ -5,7 +5,7 @@ import App from "./App";
 import { createStore, compose, applyMiddleware } from "redux";
 import { Provider } from "react-redux"; // app is wrapped by provider and so it is connected to redux
 import thunk from "redux-thunk";
-import rootReducer from "./reducers/index";
+import rootReducer from "./redux/reducers/index";
 //----------css-sass----------------------
 import "./scss/main.scss";
 

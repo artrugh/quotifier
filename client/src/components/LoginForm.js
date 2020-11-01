@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import { login } from "../actions";
+import { login, userSources, getUser } from "../redux/actions";
 import { useDispatch } from "react-redux";
+import { getSources } from "../helpers/getUserData";
 const axios = require("axios");
 
 const LoginForm = () => {
@@ -23,8 +24,11 @@ const LoginForm = () => {
   const submitForm = () => {
     axios(options)
       .then((response) => {
-        console.log(response);
+        let user = response.data.user;
+        dispatch(getUser(user));
         dispatch(login());
+        const sources = getSources();
+        dispatch(userSources(sources));
         setRedirect(true);
       })
       .catch((error) => {
