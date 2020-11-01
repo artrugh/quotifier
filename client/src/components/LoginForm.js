@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { login, userSources } from "../actions";
 import { useDispatch } from "react-redux";
+import { getSources } from "../scripts/getUserData";
 const axios = require("axios");
 
 const LoginForm = () => {
@@ -25,7 +26,9 @@ const LoginForm = () => {
       .then((response) => {
         console.log(response);
         dispatch(login());
-        dispatch();
+        const sources = getSources();
+        dispatch(userSources(sources));
+        // dispatch(userSources(sources.data));
         setRedirect(true);
       })
       .catch((error) => {
