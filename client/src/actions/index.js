@@ -22,6 +22,13 @@ export const logout = () => {
   };
 };
 
+export const getUser = (data) => {
+  return {
+    type: "USER_DATA",
+    payload: data,
+  };
+};
+
 export const userSources = (sources) => {
   return {
     type: "USER_SOURCES",
