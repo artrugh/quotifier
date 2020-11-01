@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { login, userSources } from "../actions";
 import { useDispatch } from "react-redux";
-import { getSources } from "../scripts/getUserData";
+import { getSources } from "../helpers/getUserData";
 const axios = require("axios");
 
 const LoginForm = () => {
