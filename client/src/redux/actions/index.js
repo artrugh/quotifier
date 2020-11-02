@@ -29,9 +29,22 @@ export const getUser = (data) => {
   };
 };
 
+export const loading = () => {
+  return {
+    type: "LOADING",
+  };
+};
+
 export const userSources = (sources) => {
   return {
     type: "USER_SOURCES",
     payload: sources,
+  };
+};
+
+export const userQuotes = (quotes) => {
+  return {
+    type: "USER_QUOTES",
+    payload: quotes,
   };
 };
