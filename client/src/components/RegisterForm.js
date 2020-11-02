@@ -1,33 +1,39 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import { login, userSources, getUser, userQuotes } from "../redux/actions";
+import { userSources, addUser, userQuotes } from "../redux/actions";
 import { useDispatch } from "react-redux";
 import { getSources, getQuotes } from "../helpers/getUserData";
 
 const axios = require("axios");
 
-const LoginForm = () => {
+const RegisterForm = () => {
+  const [userFirst, setFirst] = useState("");
+  const [userLast, setLast] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [redirect, setRedirect] = useState(null);
   const dispatch = useDispatch();
 
   const options = {
-    url: "/api/v1/users/login",
+    url: "/api/v1/users/register",
     mode: "cors",
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    data: { email: email, password: password },
+    data: {
+      userFirst: userFirst,
+      userLast: userLast,
+      email: email,
+      password: password,
+    },
   };
 
   const submitForm = () => {
     axios(options)
       .then((response) => {
         let user = response.data.user;
-        dispatch(getUser(user));
-        dispatch(login());
+        dispatch(addUser(user));
         const sources = getSources();
         const quotes = getQuotes();
         dispatch(userQuotes(quotes));
@@ -48,11 +54,29 @@ const LoginForm = () => {
   };
 
   if (redirect) {
-    return <Redirect to="/workspace" />;
+    return <Redirect to="/confirmation" />;
   }
 
   return (
     <form onSubmit={handleSubmit}>
+      <input
+        type="firstName"
+        name="firstName"
+        className="input"
+        onChange={(e) => setFirst(e.target.value)}
+        placeholder="firstName"
+        autoComplete="on"
+        required
+      />
+      <input
+        type="lastName"
+        name="lastName"
+        className="input"
+        onChange={(e) => setLast(e.target.value)}
+        placeholder="lastName"
+        autoComplete="on"
+        required
+      />
       <input
         type="email"
         name="email"
@@ -78,4 +102,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default RegisterForm;

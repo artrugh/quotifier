@@ -2,11 +2,10 @@ import React from "react";
 
 function PersonalProfile() {
   return (
-    <div className="personal-profile">
+    <div className="registration-confirmation">
       <h2>Welcome User!</h2>
       <p className="text">
-        here you can implement all your quotes and find them every time you need
-        them just by clicking on the tags{" "}
+        Thank you for registering, you well get a confirmation email very soon
       </p>
     </div>
   );
