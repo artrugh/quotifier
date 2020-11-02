@@ -18,6 +18,7 @@ export const getSources = () => {
     .catch((error) => {
       console.log(error.response);
     });
+  console.log(data);
   return data;
 };
 
@@ -30,10 +31,10 @@ export const getQuotes = () => {
       "Content-Type": "application/json",
     },
   };
-  let data = { quotes: null };
+  let data = [];
   axios(quoteOptions)
     .then((response) => {
-      data.quotes(response.data);
+      data.push(response.data);
     })
     .catch((error) => {
       console.log(error.response);
