@@ -58,7 +58,7 @@ const RegisterForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="reg-form" onSubmit={handleSubmit}>
       <input
         type="firstName"
         name="firstName"

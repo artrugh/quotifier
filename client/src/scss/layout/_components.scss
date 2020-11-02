@@ -4,7 +4,9 @@
 .redux-button-login,
 .sign-in,
 .personal-profile,
-.registration-confirmation {
+.registration-confirmation,
+.reg-form,
+.login-form {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -13,7 +15,8 @@
 
 .about,
 .help,
-.home {
+.home,
+.sign-in {
   margin-top: 10rem;
 }
 
@@ -31,4 +34,7 @@
 
 .about-single-button {
   margin: 1rem;
+}
+
+.reg-form {
 }
