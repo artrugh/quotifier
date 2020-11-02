@@ -41,3 +41,10 @@ export const userSources = (sources) => {
     payload: sources,
   };
 };
+
+export const userQuotes = (quotes) => {
+  return {
+    type: "USER_QUOTES",
+    payload: quotes,
+  };
+};
