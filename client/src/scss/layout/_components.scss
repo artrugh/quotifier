@@ -6,7 +6,9 @@
 .personal-profile,
 .registration-confirmation,
 .reg-form,
-.login-form {
+.login-form,
+.quote,
+.sign-up {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -14,10 +16,13 @@
 }
 
 .about,
-.help,
-.home,
-.sign-in {
-  margin-top: 10rem;
+// .help,
+.home
+// .sign-in
+// .sign-up,
+// .quote
+{
+  margin-top: 5rem;
 }
 
 .redux-button-login {
@@ -36,5 +41,39 @@
   margin: 1rem;
 }
 
-.reg-form {
+.about,
+.sign-up,
+.quote {
+  width: 100vw;
+}
+
+.about {
+  background-color: rgb(114, 251, 114);
+  height: 70vh;
+}
+
+.sign-up {
+  background-color: rgb(44, 246, 44);
+  height: 100vh;
+}
+
+.quote {
+  background-color: green;
+  height: 100vh;
+}
+
+.sign-in {
+  height: 100vh;
+  background-color: rgb(44, 246, 44);
+}
+
+.footer {
+  height: 30vh;
+  width: 100vw;
+  background-color: indigo;
+  display: flex;
+}
+
+.footer p {
+  margin: 0;
 }

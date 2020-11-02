@@ -3,7 +3,7 @@ import RegisterForm from "./RegisterForm";
 
 function Register() {
   return (
-    <div className="sign-in">
+    <div className="sign-up">
       <h2>please register here</h2>
       <RegisterForm />
     </div>

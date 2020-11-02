@@ -1,11 +1,11 @@
 .nav-container {
   width: 99.15vw;
-  // background-color: white;
+  border: black solid 1px;
   display: flex;
   justify-content: flex-end;
-  // text-align: center;
   align-items: flex-end;
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .nav-links {
