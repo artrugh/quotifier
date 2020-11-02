@@ -6,12 +6,12 @@ import Help from "./components/Help";
 import Nav from "./components/Nav";
 import LogIn from "./components/LogIn";
 import Workspace from "./components/Workspace";
+import RegisterForm from "./components/RegisterForm";
+import RegConfirmation from "./components/RegConfirmation";
 //----------------Routing--------------------------
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //----------------redux-----------------------------------
 import { useSelector } from "react-redux";
-//---------------Aux-------------------------------
-// import Aux from "./hoc/Aux";
 
 function App() {
   //------redux---------------------------------------
@@ -23,6 +23,8 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/workspace" component={Workspace} />
+          <Route path="/register" component={RegisterForm} />
+          <Route path="/confirmation" component={RegConfirmation} />
           <Route path="/login" component={LogIn} />
           <Route path="/about" component={About} />
           <Route path="/help" component={Help} />
