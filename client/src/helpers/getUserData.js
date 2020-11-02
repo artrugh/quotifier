@@ -18,6 +18,7 @@ export const getSources = () => {
     .catch((error) => {
       console.log(error.response);
     });
+  console.log(data);
   return data;
 };
 
