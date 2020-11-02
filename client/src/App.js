@@ -6,7 +6,7 @@ import Help from "./components/Help";
 import Nav from "./components/Nav";
 import LogIn from "./components/LogIn";
 import Workspace from "./components/Workspace";
-import RegisterForm from "./components/RegisterForm";
+import Register from "./components/Register";
 import RegConfirmation from "./components/RegConfirmation";
 //----------------Routing--------------------------
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -23,7 +23,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/workspace" component={Workspace} />
-          <Route path="/register" component={RegisterForm} />
+          <Route path="/register" component={Register} />
           <Route path="/confirmation" component={RegConfirmation} />
           <Route path="/login" component={LogIn} />
           <Route path="/about" component={About} />
