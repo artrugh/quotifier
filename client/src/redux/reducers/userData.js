@@ -1,13 +1,8 @@
-const initialState = {
-  user: null,
-  loading: false,
-};
-const userReducer = (state = initialState, action) => {
+const userReducer = (state = null, action) => {
   switch (action.type) {
-    case "USER_DATA":
-      return { ...state, user: action.payload };
-    case "LOADING":
-      return { ...state, loading: true };
+    case "USER_NAME":
+      let userName = action.payload.userFirst + " " + action.payload.userLast;
+      return userName;
     default:
       return state;
   }

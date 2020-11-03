@@ -1,7 +1,7 @@
-const quotesReducer = (state = {}, action) => {
+const quotesReducer = (state = [], action) => {
   switch (action.type) {
-    case "USER_QUOTES":
-      return { ...state, quotes: action.payload };
+    case "LOAD_SOURCES":
+      return action.payload;
     default:
       return state;
   }
