@@ -22,13 +22,6 @@ export const logout = () => {
   };
 };
 
-export const addUser = (data) => {
-  return {
-    type: "ADD_USER",
-    payload: data,
-  };
-};
-
 export const getUser = (data) => {
   return {
     type: "USER_NAME",
