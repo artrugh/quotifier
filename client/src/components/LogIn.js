@@ -7,7 +7,6 @@ function SignIn() {
     <div className="sign-in">
       <h2>please sign in here</h2>
       <LogInForm />
-      <Footer />
     </div>
   );
 }
