@@ -58,13 +58,27 @@
   padding-bottom: 30vh;
 }
 
-.footer {
+//----------------footer---------------------------------
+
+.footer-all {
   padding: 3rem;
   width: 100%;
   background-color: $mid-color-dark;
   display: flex;
+  justify-content: center;
 }
 
 .footer p {
   margin: 0;
+}
+
+.footer-left,
+.footer-middle {
+  padding: 2rem 4rem;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  padding: 2rem 4rem;
 }
