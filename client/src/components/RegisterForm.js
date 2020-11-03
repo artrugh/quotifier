@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import { userSources, addUser, userQuotes } from "../redux/actions";
+import { loadSources, getUser, loadQuotes, login } from "../redux/actions";
 import { useDispatch } from "react-redux";
 import { getSources, getQuotes } from "../helpers/getUserData";
 
@@ -32,12 +32,14 @@ const RegisterForm = () => {
   const submitForm = () => {
     axios(options)
       .then((response) => {
+        console.log(response);
         let user = response.data.user;
-        dispatch(addUser(user));
+        dispatch(getUser(user));
+        dispatch(login());
         const sources = getSources();
         const quotes = getQuotes();
-        dispatch(userQuotes(quotes));
-        dispatch(userSources(sources));
+        dispatch(loadQuotes(quotes));
+        dispatch(loadSources(sources));
         setRedirect(true);
       })
       .catch((error) => {

@@ -31,7 +31,7 @@ export const addUser = (data) => {
 
 export const getUser = (data) => {
   return {
-    type: "USER_DATA",
+    type: "USER_NAME",
     payload: data,
   };
 };
@@ -42,16 +42,16 @@ export const loading = () => {
   };
 };
 
-export const userSources = (sources) => {
+export const loadSources = (sources) => {
   return {
-    type: "USER_SOURCES",
+    type: "LOAD_SOURCES",
     payload: sources,
   };
 };
 
-export const userQuotes = (quotes) => {
+export const loadQuotes = (quotes) => {
   return {
-    type: "USER_QUOTES",
+    type: "LOAD_QUOTES",
     payload: quotes,
   };
 };

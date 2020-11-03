@@ -1,14 +1,14 @@
 import isLogged from "./isLogged";
-import sources from "./getUserSources";
-import userData from "./userData";
+import userName from "./userData";
 import quotes from "./getUserQuotes";
+import sources from "./getUserSources";
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
-  userData,
+  userName,
   isLogged,
-  sources,
   quotes,
+  sources,
 });
 
 export default rootReducer;

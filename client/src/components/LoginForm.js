@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import { login, userSources, getUser, userQuotes } from "../redux/actions";
+import { login, loadSources, getUser, loadQuotes } from "../redux/actions";
 import { useDispatch } from "react-redux";
 import { getSources, getQuotes } from "../helpers/getUserData";
 
@@ -30,8 +30,8 @@ const LoginForm = () => {
         dispatch(login());
         const sources = getSources();
         const quotes = getQuotes();
-        dispatch(userQuotes(quotes));
-        dispatch(userSources(sources));
+        dispatch(loadQuotes(quotes));
+        dispatch(loadSources(sources));
         setRedirect(true);
       })
       .catch((error) => {
