@@ -7,7 +7,9 @@ import { faGithub, faMailchimp } from "@fortawesome/free-brands-svg-icons";
 function FooterIcons() {
   return (
     <div className="footer-icons">
-      <FontAwesomeIcon className="footer-icons-single" icon={faGithub} />
+      <a href="https://github.com/NLJZ/quotifier">
+        <FontAwesomeIcon className="footer-icons-single" icon={faGithub} />
+      </a>
       <FontAwesomeIcon className="footer-icons-single" icon={faMailchimp} />
       <FontAwesomeIcon className="footer-icons-single" icon={faEnvelope} />
     </div>

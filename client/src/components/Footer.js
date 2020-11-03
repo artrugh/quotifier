@@ -10,7 +10,9 @@ function Footer() {
         <p className="text-footer">team</p>
       </div>
       <div className="footer-middle">
-        <p className="text-footer">help</p>
+        <a href="https://github.com/NLJZ/quotifier">
+          <p className="text-footer">help</p>
+        </a>
         <p className="text-footer">imprint</p>
         <p className="text-footer">something</p>
       </div>

@@ -16,6 +16,10 @@
   align-items: center;
 }
 
+.h2-forms {
+  padding: 3rem;
+}
+
 .text {
   max-width: 40rem;
   margin: 3rem;
@@ -56,6 +60,26 @@
 .sign-in,
 .register {
   padding-bottom: 30vh;
+  border: 1px solid black;
+}
+
+//---------------login-form-----------------------------
+
+.login-form {
+  border: 1px solid black;
+  padding: 4rem 3rem;
+  border-radius: 20px;
+}
+
+.input {
+  margin: 1rem;
+}
+
+.sign-in-button {
+  @include singleButton;
+  width: 10rem;
+  background-color: $mid-color-mid;
+  padding: 0.5rem;
 }
 
 //----------------footer---------------------------------
