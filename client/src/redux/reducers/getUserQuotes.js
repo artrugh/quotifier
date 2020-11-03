@@ -1,7 +1,9 @@
-const quotesReducer = (state = [], action) => {
+const array = [];
+const quotesReducer = (state = array, action) => {
   switch (action.type) {
     case "LOAD_QUOTES":
-      return action.payload;
+      array = array.concat(...action.payload);
+      return array;
     default:
       return state;
   }
