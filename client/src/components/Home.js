@@ -6,7 +6,6 @@ import Quote from "./Quote";
 function home() {
   return (
     <div className="home">
-      <h2>Welcome to Quotify</h2>
       <About />
       <SignUp />
       <Quote />
