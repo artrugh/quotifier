@@ -8,8 +8,10 @@ function SignUp() {
         never miss a quote again! with quotifier you can keep all your quotes
         saved and easily find them back whenever you need them.{" "}
       </p>
-      <div className="about-buttons">
-        <button className="about-single-button">sign up with email</button>
+      <div className="signup-buttons">
+        <button className="sign-up-single-button-light">
+          sign up with email
+        </button>
       </div>
     </div>
   );

@@ -1,0 +1,12 @@
+.about-single-button-dark {
+  @include singleButton;
+  background-color: $mid-color-mid;
+  width: 10rem;
+  margin-right: 2rem;
+}
+
+.sign-up-single-button-light {
+  @include singleButton;
+  background-color: $mid-color-light;
+  width: 20rem;
+}

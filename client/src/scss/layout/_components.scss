@@ -38,22 +38,18 @@
 
 .about {
   background-color: $mid-color-light;
-  height: 100vh;
+  @include minHeightComponents;
 }
 
 .sign-up {
   background-color: $mid-color-mid;
-  height: 100vh;
+  @include minHeightComponents;
 }
 
-.quote {
-  background-color: $mid-color-light;
-  height: 100vh;
-}
-
+.quote,
 .sign-in,
 .register {
-  min-height: 100vh;
+  @include minHeightComponents;
   background-color: $mid-color-light;
 }
 
