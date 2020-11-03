@@ -2,7 +2,6 @@ import React from "react";
 import About from "./About";
 import SignUp from "./SignUp";
 import Quote from "./Quote";
-import Footer from "./Footer";
 
 function home() {
   return (
@@ -11,7 +10,6 @@ function home() {
       <About />
       <SignUp />
       <Quote />
-      <Footer />
     </div>
   );
 }
