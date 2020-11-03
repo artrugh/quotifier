@@ -1,0 +1,11 @@
+@mixin minHeightComponents {
+  min-height: 100vh;
+}
+
+@mixin singleButton {
+  text-decoration: none;
+  border: 1px solid $mid-color-dark;
+  color: $mid-color-dark;
+  border-radius: 30px;
+  padding: 1rem;
+}
