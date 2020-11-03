@@ -63,11 +63,8 @@
   background-color: rgb(44, 246, 44);
 }
 
-.app,
-.home,
 .sign-in,
 .register {
-  position: relative;
   padding-bottom: 30vh;
 }
 
@@ -76,8 +73,6 @@
   width: 100%;
   background-color: indigo;
   display: flex;
-  position: absolute;
-  bottom: 0;
 }
 
 .footer p {
