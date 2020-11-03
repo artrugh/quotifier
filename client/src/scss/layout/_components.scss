@@ -16,20 +16,14 @@
   align-items: center;
 }
 
-.about,
-.home {
-  margin-top: 5rem;
-}
-
-.redux-button-login {
-  margin-top: 5rem;
-  margin-bottom: 2rem;
-  // position: absolute;
-}
-
 .text {
-  max-width: 20rem;
+  max-width: 40rem;
   margin: 3rem;
+}
+
+.text-quote {
+  font-size: 3.5rem;
+  max-width: 70rem;
 }
 
 .about-single-button {
@@ -43,24 +37,24 @@
 }
 
 .about {
-  background-color: rgb(114, 251, 114);
-  height: 70vh;
+  background-color: $mid-color-light;
+  height: 100vh;
 }
 
 .sign-up {
-  background-color: rgb(44, 246, 44);
+  background-color: $mid-color-mid;
   height: 100vh;
 }
 
 .quote {
-  background-color: green;
+  background-color: $mid-color-light;
   height: 100vh;
 }
 
 .sign-in,
 .register {
   min-height: 100vh;
-  background-color: rgb(44, 246, 44);
+  background-color: $mid-color-light;
 }
 
 .sign-in,
@@ -71,7 +65,7 @@
 .footer {
   padding: 3rem;
   width: 100%;
-  background-color: indigo;
+  background-color: $mid-color-dark;
   display: flex;
 }
 
