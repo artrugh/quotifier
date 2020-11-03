@@ -16,12 +16,7 @@
 }
 
 .about,
-// .help,
-.home
-// .sign-in
-// .sign-up,
-// .quote
-{
+.home {
   margin-top: 5rem;
 }
 
@@ -44,7 +39,7 @@
 .about,
 .sign-up,
 .quote {
-  width: 100vw;
+  width: 100%;
 }
 
 .about {
@@ -68,8 +63,8 @@
 }
 
 .footer {
-  height: 30vh;
-  width: 100vw;
+  padding: 3rem;
+  width: 100%;
   background-color: indigo;
   display: flex;
 }

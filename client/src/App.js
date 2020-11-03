@@ -8,6 +8,7 @@ import LogIn from "./components/LogIn";
 import Workspace from "./components/Workspace";
 import Register from "./components/Register";
 import RegConfirmation from "./components/RegConfirmation";
+import Footer from "./components/Footer";
 //----------------Routing--------------------------
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //----------------redux-----------------------------------
@@ -29,6 +30,7 @@ function App() {
           <Route path="/about" component={About} />
           <Route path="/help" component={Help} />
         </Switch>
+        <Footer />
       </div>
     </Router>
   );
