@@ -5,7 +5,7 @@ import Footer from "./Footer";
 function SignIn() {
   return (
     <div className="sign-in">
-      <h2>please sign in here</h2>
+      <h2 className="h2-forms">please sign in here</h2>
       <LogInForm />
     </div>
   );
