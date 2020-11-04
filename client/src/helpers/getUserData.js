@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-export const getSources = () => {
+export const getSources = async () => {
   const sourceOptions = {
     url: "/api/v1/data/getSources",
     mode: "cors",
@@ -9,20 +9,12 @@ export const getSources = () => {
       "Content-Type": "application/json",
     },
   };
-  let data = [];
-  axios(sourceOptions)
-    .then((response) => {
-      data.push(response.data);
-      console.log(data);
-    })
-    .catch((error) => {
-      console.log(error.response);
-    });
-  console.log(data);
+  const response = await axios(sourceOptions);
+  const data = await response.data;
   return data;
 };
 
-export const getQuotes = () => {
+export const getQuotes = async () => {
   const quoteOptions = {
     url: "/api/v1/data/getQuotes",
     mode: "cors",
@@ -31,13 +23,7 @@ export const getQuotes = () => {
       "Content-Type": "application/json",
     },
   };
-  let data = [];
-  axios(quoteOptions)
-    .then((response) => {
-      data.push(response.data);
-    })
-    .catch((error) => {
-      console.log(error.response);
-    });
+  const response = await axios(quoteOptions);
+  const data = await response.data;
   return data;
 };
