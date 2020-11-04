@@ -75,7 +75,7 @@ dataControllers.getSources = async (req, res) => {
     const currentUser = res.locals.user;
     const sources = await Source.find({
       user: `${currentUser.id}`,
-    });
+    }).lean();
     res.status(200).json(sources);
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -87,7 +87,7 @@ dataControllers.getQuotes = async (req, res) => {
     const currentUser = res.locals.user;
     const quotes = await Quote.find({
       user: `${currentUser.id}`,
-    });
+    }).lean();
     res.status(200).json(quotes);
   } catch (err) {
     res.status(500).json({ message: err.message });
