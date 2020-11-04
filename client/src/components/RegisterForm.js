@@ -36,10 +36,6 @@ const RegisterForm = () => {
         let user = response.data.user;
         dispatch(getUser(user));
         dispatch(login());
-        const sources = getSources();
-        const quotes = getQuotes();
-        dispatch(loadQuotes(quotes));
-        dispatch(loadSources(sources));
         setRedirect(true);
       })
       .catch((error) => {
@@ -56,7 +52,7 @@ const RegisterForm = () => {
   };
 
   if (redirect) {
-    return <Redirect to="/confirmation" />;
+    return <Redirect to="/workspace" />;
   }
 
   return (
