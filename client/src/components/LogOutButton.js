@@ -18,8 +18,8 @@ const LogOutButton = () => {
     },
   };
 
-  const logoutUser = () => {
-    axios(options)
+  const logoutUser = async () => {
+    await axios(options)
       .then((response) => {
         console.log(response);
         dispatch(logout());

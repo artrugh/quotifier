@@ -29,13 +29,12 @@ const RegisterForm = () => {
     },
   };
 
-  const submitForm = () => {
-    axios(options)
+  const submitForm = async () => {
+    await axios(options)
       .then((response) => {
         console.log(response);
         let user = response.data.user;
         dispatch(getUser(user));
-        dispatch(login());
         setRedirect(true);
       })
       .catch((error) => {
@@ -44,6 +43,7 @@ const RegisterForm = () => {
           `${error.response.data.errors.email} ${error.response.data.errors.password}`
         );
       });
+    dispatch(login());
   };
 
   const handleSubmit = (e) => {

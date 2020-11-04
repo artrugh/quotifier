@@ -28,6 +28,7 @@ const LoginForm = () => {
         let user = response.data.user;
         dispatch(getUser(user));
         dispatch(login());
+        setRedirect(true);
       })
       .catch((error) => {
         console.log(error.response);
@@ -39,7 +40,6 @@ const LoginForm = () => {
     const quotes = await getQuotes();
     dispatch(loadQuotes(quotes));
     dispatch(loadSources(sources));
-    setRedirect(true);
   };
 
   const handleSubmit = (e) => {
