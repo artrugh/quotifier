@@ -95,9 +95,9 @@ dataControllers.getQuotes = async (req, res) => {
 };
 
 dataControllers.updateQuote = async (req, res, next) => {
-  const id = req.params.id;
-  const changes = req.body;
   try {
+    const id = req.params.id;
+    const changes = req.body;
     const quote = await Quote.quoteCheck(id);
     if (req.body.body !== undefined) {
       quote.body = changes.body;
@@ -114,7 +114,8 @@ dataControllers.updateQuote = async (req, res, next) => {
     await quote.save();
     res.json(quote);
   } catch (err) {
-    console.log(err.message);
+    let errorMsg = err.message;
+    return res.status(500).json({ status: 500, error: errorMsg });
   }
 };
 

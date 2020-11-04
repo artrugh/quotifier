@@ -52,11 +52,17 @@ const sourceSchema = Schema(
 
 // static method to make sure object exists
 sourceSchema.statics.sourceCheck = async function (id) {
-  const source = await this.findById(id);
-  if (source) {
-    return source;
+  try {
+    const source = await this.findById(id);
+    if (source) {
+      return source;
+    } else {
+      let error = "none";
+      return error;
+    }
+  } catch (err) {
+    console.log(err);
   }
-  throw Error("Source Does Not Exist");
 };
 
 const Source = mongoose.model("Source", sourceSchema);
