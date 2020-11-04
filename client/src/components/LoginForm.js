@@ -22,17 +22,12 @@ const LoginForm = () => {
     data: { email: email, password: password },
   };
 
-  const submitForm = () => {
-    axios(options)
+  const submitForm = async () => {
+    await axios(options)
       .then((response) => {
         let user = response.data.user;
         dispatch(getUser(user));
         dispatch(login());
-        const sources = getSources();
-        const quotes = getQuotes();
-        dispatch(loadQuotes(quotes));
-        dispatch(loadSources(sources));
-        setRedirect(true);
       })
       .catch((error) => {
         console.log(error.response);
@@ -40,6 +35,11 @@ const LoginForm = () => {
           `${error.response.data.errors.email} ${error.response.data.errors.password}`
         );
       });
+    const sources = await getSources();
+    const quotes = await getQuotes();
+    dispatch(loadQuotes(quotes));
+    dispatch(loadSources(sources));
+    setRedirect(true);
   };
 
   const handleSubmit = (e) => {
