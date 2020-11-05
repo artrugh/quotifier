@@ -1,3 +1,5 @@
+//-----------------main-nav--------------------------
+
 .nav-container {
   width: 99.15vw;
   border: black solid 1px;
@@ -28,4 +30,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+//-----------------workspace-navs--------------------------
+
+.workspace-menu-top {
+  height: 10%;
+  width: 100%;
+  background-color: grey;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.workspace-menu-left {
+  height: 100%;
+  width: 100%;
+  background-color: blue;
 }

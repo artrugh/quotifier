@@ -65,8 +65,9 @@
 
 //---------------login-form-----------------------------
 
-.login-form {
-  border: 1px solid black;
+.login-form,
+.reg-form {
+  border: 2px solid $mid-color-mid;
   padding: 4rem 3rem;
   border-radius: 20px;
 }
@@ -75,7 +76,8 @@
   margin: 1rem;
 }
 
-.sign-in-button {
+.sign-in-button,
+.register-button {
   @include singleButton;
   width: 10rem;
   background-color: $mid-color-mid;
@@ -105,4 +107,37 @@
   display: flex;
   align-items: center;
   padding: 2rem 4rem;
+}
+
+//--------workspace------------------
+
+.workspace {
+  background-color: blueviolet;
+  width: 100%;
+  @include minHeightComponents;
+  display: flex;
+}
+
+.workspace-right {
+  background-color: yellow;
+  width: 80%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.workspace-left {
+  background: green;
+  width: 20%;
+  height: 100vh;
+}
+
+.workspace-main {
+  height: 90%;
+  width: 100%;
+  background-color: brown;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
