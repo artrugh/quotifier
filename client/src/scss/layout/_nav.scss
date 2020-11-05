@@ -35,13 +35,16 @@
 //-----------------workspace-navs--------------------------
 
 .workspace-menu-top {
-  height: 10vh;
-  width: 80%;
+  height: 10%;
+  width: 100%;
   background-color: grey;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .workspace-menu-left {
   height: 100%;
-  width: 20%;
+  width: 100%;
   background-color: blue;
 }

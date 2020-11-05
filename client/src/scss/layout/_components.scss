@@ -108,3 +108,35 @@
   align-items: center;
   padding: 2rem 4rem;
 }
+
+//--------workspace------------------
+
+.workspace {
+  background-color: blueviolet;
+  width: 100%;
+  @include minHeightComponents;
+  display: flex;
+}
+
+.workspace-right {
+  background-color: yellow;
+  width: 80%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.workspace-left {
+  background: green;
+  width: 20%;
+  height: 100vh;
+}
+
+.workspace-main {
+  height: 90%;
+  width: 100%;
+  background-color: brown;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
