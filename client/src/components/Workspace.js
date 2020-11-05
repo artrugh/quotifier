@@ -3,10 +3,10 @@ import LogOutButton from "./LogOutButton";
 import WorkspaceMenuTop from "./WorkspaceMenuTop";
 import WorkspaceMenuLeft from "./WorkspaceMenuLeft";
 import WorkspaceMain from "./WorkspaceMain";
-import { useSelector, useDispatch } from "react-redux";
+// import { useSelector, useDispatch } from "react-redux";
 
 const Workspace = () => {
-  const userName = useSelector((state) => state.userName);
+  // const userName = useSelector((state) => state.userName);
 
   return (
     <div className="workspace">
