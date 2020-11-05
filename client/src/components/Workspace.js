@@ -1,16 +1,19 @@
 import React from "react";
 import LogOutButton from "./LogOutButton";
-import { useSelector, useDispatch } from "react-redux";
+import WorkspaceMenuTop from "./WorkspaceMenuTop";
+import WorkspaceMenuLeft from "./WorkspaceMenuLeft";
+import WorkspaceMain from "./WorkspaceMain";
 
 const Workspace = () => {
-  const userName = useSelector((state) => state.userName);
   return (
     <div className="workspace">
-      <h2>Hello {userName}.</h2>
-      <p className="text">
-        here you can implement all your quotes and find them every time you need
-        them just by clicking on the tags{" "}
-      </p>
+      <div className="workspace-left">
+        <WorkspaceMenuLeft />
+      </div>
+      <div className="workspace-right">
+        <WorkspaceMenuTop />
+        <WorkspaceMain />
+      </div>
       <LogOutButton />
     </div>
   );
