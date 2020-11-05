@@ -65,8 +65,9 @@
 
 //---------------login-form-----------------------------
 
-.login-form {
-  border: 1px solid black;
+.login-form,
+.reg-form {
+  border: 2px solid $mid-color-mid;
   padding: 4rem 3rem;
   border-radius: 20px;
 }
@@ -75,7 +76,8 @@
   margin: 1rem;
 }
 
-.sign-in-button {
+.sign-in-button,
+.register-button {
   @include singleButton;
   width: 10rem;
   background-color: $mid-color-mid;

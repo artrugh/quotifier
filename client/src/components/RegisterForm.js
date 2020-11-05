@@ -56,7 +56,7 @@ const RegisterForm = () => {
   };
 
   if (redirect) {
-    return <Redirect to="/confirmation" />;
+    return <Redirect to="/workspace" />;
   }
 
   return (
@@ -97,7 +97,7 @@ const RegisterForm = () => {
         autoComplete="on"
         required
       />
-      <button type="submit" value="Submit">
+      <button className="input register-button" type="submit" value="Submit">
         Submit
       </button>
     </form>
