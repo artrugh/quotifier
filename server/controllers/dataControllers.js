@@ -95,10 +95,41 @@ dataControllers.getQuotes = async (req, res) => {
 };
 
 dataControllers.updateQuote = async (req, res, next) => {
+  const id = req.params.id;
+  const changes = req.body;
   try {
-    const id = req.params.id;
-    const changes = req.body;
     const quote = await Quote.quoteCheck(id);
+    if (req.body.source !== undefined && req.body.source !== quote.source) {
+      const oldSource = await Source.sourceCheck(quote.source);
+      console.log(oldSource.id);
+      await Source.findByIdAndUpdate(
+        oldSource.id,
+        { $pull: { quotes: id } },
+        { new: true },
+        function (err, source) {
+          if (err) {
+            console.log(err);
+          } else {
+            console.log(source);
+          }
+        }
+      );
+      const newSource = await Source.sourceCheck(changes.source);
+      console.log(newSource.id);
+      await Source.findByIdAndUpdate(
+        newSource.id,
+        { $addToSet: { quotes: id } },
+        { new: true },
+        function (err, source) {
+          if (err) {
+            console.log(err);
+          } else {
+            console.log(source);
+          }
+        }
+      );
+      quote.source = changes.source;
+    }
     if (req.body.body !== undefined) {
       quote.body = changes.body;
     }
