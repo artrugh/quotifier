@@ -28,13 +28,13 @@ const WorkspaceMenuTopIcons = () => {
       >
         <ul>
           <li>
-            <a href="/messages">Messages</a>
+            <a href="/messages">Profile</a>
           </li>
           <li>
-            <a href="/trips">Trips</a>
+            <a href="/trips">Settings</a>
           </li>
           <li>
-            <a href="/saved">Saved</a>
+            <a href="/saved">something else</a>
           </li>
         </ul>
       </nav>

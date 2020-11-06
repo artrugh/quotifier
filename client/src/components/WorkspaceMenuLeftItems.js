@@ -10,7 +10,7 @@ const WorkspaceMenuLeftItems = () => {
   return (
     <ul className="workspace-menu-left-items menu-container2">
       <li className="workspace-menu-left-items-link menu-trigger2">
-        <button onClick={onClick}> Recent</button>
+        <button onClick={onClick}> Dropdown</button>
         {/* <Link onClick={onClick} to="/recent">
           Recent
         </Link> */}
@@ -21,13 +21,13 @@ const WorkspaceMenuLeftItems = () => {
         className={`menu2 ${isActive ? "active2" : "inactive2"}`}
       >
         <li>
-          <a href="/messages">Messages</a>
+          <a href="/messages">last quote 1</a>
         </li>
         <li>
-          <a href="/trips">Trips</a>
+          <a href="/trips">last quote 2</a>
         </li>
         <li>
-          <a href="/saved">Saved</a>
+          <a href="/saved">last quote 2</a>
         </li>
       </ul>
 
