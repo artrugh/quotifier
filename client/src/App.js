@@ -9,6 +9,9 @@ import Workspace from "./components/Workspace";
 import Register from "./components/Register";
 import RegConfirmation from "./components/RegConfirmation";
 import Footer from "./components/Footer";
+import WorkspaceMainAllQuotes from "./components/WorkspaceMainAllQuotes";
+import WorkspaceMainTags from "./components/WorkspaceMainTags";
+import WorkspaceMainRecent from "./components/WorkspaceMainRecent";
 //----------------Routing--------------------------
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //----------------redux-----------------------------------
@@ -29,6 +32,10 @@ function App() {
           <Route path="/login" component={LogIn} />
           <Route path="/about" component={About} />
           <Route path="/help" component={Help} />
+          <Route path="/allquotes" component={WorkspaceMainAllQuotes} />
+          <Route path="/allquotes" component={WorkspaceMainAllQuotes} />
+          <Route path="/recent" component={WorkspaceMainRecent} />
+          <Route path="/tags" component={WorkspaceMainTags} />
         </Switch>
         <Footer />
       </div>
