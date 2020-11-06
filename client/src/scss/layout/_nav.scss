@@ -27,10 +27,10 @@
   align-items: center;
 }
 
-//-----------------workspace-navs--------------------------
+//-----------------workspace-nav-top-------------------------
 
 .workspace-menu-top {
-  height: 10%;
+  height: 7%;
   width: 100%;
   background-color: grey;
   display: flex;
@@ -42,4 +42,206 @@
   height: 100%;
   width: 100%;
   background-color: blue;
+}
+
+.workspace-menu-top-icons {
+  border: 1px rgb(231, 0, 0) solid;
+  width: 25%;
+  display: flex;
+  // text-align: right;
+  justify-items: end;
+}
+
+.workspace-menu-top-buttons {
+  border: 1px black solid;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+//--------------------workspace-nav-left-----------------
+
+.workspace-menu-left {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  border: 1px rgb(255, 251, 0) solid;
+}
+
+.workspace-menu-left-items-link {
+  outline: none;
+  text-decoration: none;
+  color: red($color: #ff0101);
+  font-size: 1.5rem;
+  padding: 1rem;
+  border: 1px rgb(60, 255, 0) solid;
+  width: 20rem;
+  display: flex;
+  justify-content: center;
+}
+
+//--------------------dropdownbutton from icon ----------------
+
+.menu-container {
+  position: relative;
+}
+
+.menu {
+  background: #ffffff;
+  border-radius: 8px;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 300px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-200px);
+  transform: translateX(-400px);
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+}
+
+.menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY();
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  border-bottom: 1px solid #dddddd;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #333333;
+  padding: 15px 20px;
+  display: block;
+}
+
+.menu-trigger {
+  background: #ff000000;
+  border-radius: 90px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 6px;
+  // box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  border: none;
+  vertical-align: middle;
+  transition: box-shadow 0.4s ease;
+}
+
+.menu-trigger:hover {
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+}
+
+.menu-trigger span {
+  font-weight: 700;
+  vertical-align: middle;
+  font-size: 14px;
+  margin: 0 10px;
+}
+
+.menu-trigger img {
+  border-radius: 90px;
+}
+
+//--------------------workspace-nav-left-----------------
+
+.workspace-menu-left {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  border: 1px rgb(255, 251, 0) solid;
+}
+
+.workspace-menu-left-items-link {
+  outline: none;
+  text-decoration: none;
+  color: red($color: #ff0101);
+  font-size: 1.5rem;
+  padding: 1rem;
+  border: 1px rgb(60, 255, 0) solid;
+  width: 20rem;
+  display: flex;
+  justify-content: center;
+}
+
+//--------------------dropdownbutton from icon ----------------
+
+.menu-container2 {
+  position: relative;
+}
+
+.menu2 {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+.menu2.active2 {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY();
+  position: relative;
+  top: 0px;
+  bottom: 20px;
+  right: 0px;
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.menu2 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu2 li {
+  border-bottom: 1px solid #dddddd;
+}
+
+.menu2 li a {
+  text-decoration: none;
+  color: #333333;
+  padding: 15px 20px;
+  display: block;
+}
+
+.menu2-trigger2 {
+  background: #ff000000;
+  border-radius: 90px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 6px;
+  // box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  border: none;
+  vertical-align: middle;
+  transition: box-shadow 0.4s ease;
+}
+
+.menu2-trigger2:hover {
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+}
+
+.menu2-trigger2 span {
+  font-weight: 700;
+  vertical-align: middle;
+  font-size: 14px;
+  margin: 0 10px;
+}
+
+.menu2-trigger2 img {
+  border-radius: 90px;
 }

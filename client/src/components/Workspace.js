@@ -10,7 +10,6 @@ const Workspace = () => {
       <div className="workspace-left">
         <WorkspaceMenuLeft />
       </div>
-
       <div className="workspace-right">
         <WorkspaceMenuTop />
         <WorkspaceMain />
