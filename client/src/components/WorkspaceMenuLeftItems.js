@@ -1,6 +1,9 @@
 import React, { useState, useRef } from "react";
 //---------Routing-------------------------------
 import { Link } from "react-router-dom";
+//----------------icons-----------------------
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const WorkspaceMenuLeftItems = () => {
   const dropdownRef = useRef(null);
@@ -10,10 +13,13 @@ const WorkspaceMenuLeftItems = () => {
   return (
     <ul className="workspace-menu-left-items menu-container2">
       <li className="workspace-menu-left-items-link menu-trigger2">
-        <button onClick={onClick}> Dropdown</button>
-        {/* <Link onClick={onClick} to="/recent">
-          Recent
-        </Link> */}
+        <button className="workspace-menu-left-items-button" onClick={onClick}>
+          <FontAwesomeIcon
+            className="workspace-menu-left-icon-single"
+            icon={faArrowRight}
+          />
+        </button>{" "}
+        Dropdown
       </li>
 
       <ul
@@ -21,13 +27,13 @@ const WorkspaceMenuLeftItems = () => {
         className={`menu2 ${isActive ? "active2" : "inactive2"}`}
       >
         <li>
-          <a href="/messages">last quote 1</a>
+          <Link to="/lastquote1">last quote 1 </Link>
         </li>
         <li>
-          <a href="/trips">last quote 2</a>
+          <Link to="/lastquote2">last quote 2 </Link>
         </li>
         <li>
-          <a href="/saved">last quote 2</a>
+          <Link to="/lastquote3">last quote 3 </Link>
         </li>
       </ul>
 

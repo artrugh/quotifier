@@ -80,7 +80,17 @@
   justify-content: center;
 }
 
-//--------------------dropdownbutton from icon ----------------
+.workspace-menu-left-icon-single {
+  font-size: 0.9rem;
+}
+
+.workspace-menu-left-items-button {
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+//--------------------dropdown-button from icon ----------------
 
 .menu-container {
   position: relative;
@@ -151,27 +161,6 @@
 
 .menu-trigger img {
   border-radius: 90px;
-}
-
-//--------------------workspace-nav-left-----------------
-
-.workspace-menu-left {
-  display: flex;
-  justify-content: center;
-  padding-top: 2rem;
-  border: 1px rgb(255, 251, 0) solid;
-}
-
-.workspace-menu-left-items-link {
-  outline: none;
-  text-decoration: none;
-  color: red($color: #ff0101);
-  font-size: 1.5rem;
-  padding: 1rem;
-  border: 1px rgb(60, 255, 0) solid;
-  width: 20rem;
-  display: flex;
-  justify-content: center;
 }
 
 //--------------------dropdownbutton from icon ----------------

@@ -1,4 +1,6 @@
 import React, { useState, useRef } from "react";
+//---------Routing-------------------------------
+import { Link } from "react-router-dom";
 //----------------icons-----------------------
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisV, faUserCircle } from "@fortawesome/free-solid-svg-icons";
@@ -17,27 +19,29 @@ const WorkspaceMenuTopIcons = () => {
         />
       </button>
 
-      <FontAwesomeIcon
-        className="workspace-menu-top-icon-single"
-        icon={faEllipsisV}
-      />
-
       <nav
         ref={dropdownRef}
         className={`menu ${isActive ? "active" : "inactive"}`}
       >
         <ul>
           <li>
-            <a href="/messages">Profile</a>
+            <Link to="/Profile">Profile </Link>
           </li>
           <li>
-            <a href="/trips">Settings</a>
+            <Link to="/settings">Settings </Link>
           </li>
           <li>
-            <a href="/saved">something else</a>
+            <Link to="/something else">something else </Link>
           </li>
         </ul>
       </nav>
+
+      <button onClick={onClick} className="menu-trigger-logout">
+        <FontAwesomeIcon
+          className="workspace-menu-top-icon-single"
+          icon={faEllipsisV}
+        />
+      </button>
     </div>
   );
 };
