@@ -94,6 +94,30 @@ dataControllers.getQuotes = async (req, res) => {
   }
 };
 
+dataControllers.getOneQuote = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const quote = await Quote.find({
+      _id: id,
+    }).lean();
+    res.status(200).json(quote);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+dataControllers.getOneSource = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const source = await Source.find({
+      _id: id,
+    }).lean();
+    res.status(200).json(source);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
 dataControllers.updateQuote = async (req, res, next) => {
   const id = req.params.id;
   const changes = req.body;
