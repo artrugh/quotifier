@@ -1,18 +1,10 @@
-// const convertArrayToObject = (array, key) => {
-//   const initialValue = {};
-//   return array.reduce((obj, item) => {
-//     return {
-//       ...obj,
-//       [item[key]]: item,
-//     };
-//   }, initialValue);
-// };
+import { arrayToObject } from "../../helpers/arrayToObject.js";
 
 const quotesReducer = (state = {}, action) => {
   switch (action.type) {
     case "LOAD_QUOTES":
-      // let newState = convertArrayToObject(action.payload, "id");
-      return action.payload;
+      let newState = arrayToObject(action.payload, "_id");
+      return newState;
     case "RESET":
       return;
     default:
