@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { login, loadSources, getUser, loadQuotes } from "../redux/actions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getSources, getQuotes } from "../helpers/getUserData";
 
 const axios = require("axios");
@@ -22,12 +22,22 @@ const LoginForm = () => {
     data: { email: email, password: password },
   };
 
+  const isLogged = useSelector((state) => state.isLogged);
+
+  const getData = async () => {
+    const sources = await getSources();
+    const quotes = await getQuotes();
+    await dispatch(loadQuotes(quotes));
+    await dispatch(loadSources(sources));
+  };
+
   const submitForm = async () => {
     await axios(options)
       .then((response) => {
         let user = response.data.user;
         dispatch(getUser(user));
         dispatch(login());
+        getData();
         setRedirect(true);
       })
       .catch((error) => {
@@ -36,19 +46,15 @@ const LoginForm = () => {
           `${error.response.data.errors.email} ${error.response.data.errors.password}`
         );
       });
-    const sources = await getSources();
-    const quotes = await getQuotes();
-    dispatch(loadQuotes(quotes));
-    dispatch(loadSources(sources));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     submitForm();
   };
 
   if (redirect) {
-    return <Redirect to="/workspace" />;
+    return <Redirect to="/" />;
   }
 
   return (

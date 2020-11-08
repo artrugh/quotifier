@@ -4,11 +4,18 @@ import quotes from "./getUserQuotes";
 import sources from "./getUserSources";
 import { combineReducers } from "redux";
 
-const rootReducer = combineReducers({
+const appReducer = combineReducers({
   userName,
   isLogged,
   quotes,
   sources,
 });
+
+const rootReducer = (state, action) => {
+  if (action.type === "SIGN_OUT") {
+    state = undefined;
+  }
+  return appReducer(state, action);
+};
 
 export default rootReducer;
