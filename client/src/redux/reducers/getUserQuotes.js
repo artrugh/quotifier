@@ -5,11 +5,6 @@ const quotesReducer = (state = {}, action) => {
     case "LOAD_QUOTES":
       let newState = arrayToObject(action.payload, "_id");
       return newState;
-    case "RESET":
-      return;
-    case "ADD_QUOTE":
-      const newQuote = arrayToObject([action.payload, "_id"]);
-      return { ...state, newQuote };
     default:
       return state;
   }
