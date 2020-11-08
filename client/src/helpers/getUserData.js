@@ -59,7 +59,7 @@ export const getOneSource = async (sourceId) => {
       "Content-Type": "application/json",
     },
   };
-  const response = await axios(quoteOptions);
+  const response = await axios(sourceOptions);
   const data = await response.data;
   return data;
 };
