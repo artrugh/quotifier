@@ -27,9 +27,7 @@ function App() {
             path="/"
             component={() => (isLogged ? <Workspace /> : <Home />)}
           />
-          <Route path="/workspace" component={Workspace} />
           <Route path="/register" component={Register} />
-          <Route path="/confirmation" component={RegConfirmation} />
           <Route path="/login" component={LogIn} />
           <Route path="/about" component={About} />
           <Route path="/help" component={Help} />
