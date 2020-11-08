@@ -1,12 +1,9 @@
-import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
+import React from "react";
 import { logout } from "../redux/actions";
 import { useDispatch } from "react-redux";
 const axios = require("axios");
 
 const LogOutButton = () => {
-  const [redirect, setRedirect] = useState(null);
-
   const dispatch = useDispatch();
 
   const options = {
@@ -23,17 +20,12 @@ const LogOutButton = () => {
       .then((response) => {
         console.log(response);
         dispatch(logout());
-        setRedirect(true);
       })
       .catch((error) => {
         console.log(error.response);
         alert(`${error.response.data}`);
       });
   };
-
-  if (redirect) {
-    return <Redirect to="/" />;
-  }
 
   return (
     <React.Fragment>
