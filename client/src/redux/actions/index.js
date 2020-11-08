@@ -56,9 +56,9 @@ export const addSource = (source) => {
   };
 };
 
-export const addQuote = (source) => {
+export const addQuote = (quote) => {
   return {
     type: "ADD_QUOTE",
-    payload: source,
+    payload: quote,
   };
 };
