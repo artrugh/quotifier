@@ -52,7 +52,7 @@ const RegisterForm = () => {
   };
 
   if (redirect) {
-    return <Redirect to="/workspace" />;
+    return <Redirect to="/" />;
   }
 
   return (

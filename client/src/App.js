@@ -22,7 +22,11 @@ function App() {
       <div className="app">
         <Nav />
         <Switch>
-          <Route path="/" exact component={Home} />
+          <Route
+            exact
+            path="/"
+            component={() => (isLogged ? <Workspace /> : <Home />)}
+          />
           <Route path="/workspace" component={Workspace} />
           <Route path="/register" component={Register} />
           <Route path="/confirmation" component={RegConfirmation} />
