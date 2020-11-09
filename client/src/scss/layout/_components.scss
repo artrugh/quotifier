@@ -98,9 +98,13 @@
   margin: 0;
 }
 
-.footer-left,
-.footer-middle {
-  padding: 20px;
+ul.footer-left {
+  padding: 2rem;
+  border: 1px solid black;
+}
+
+ul.footer-middle {
+  padding: 2rem;
   border: 1px solid black;
 }
 
@@ -134,7 +138,7 @@
 }
 
 .workspace-main {
-  height: 90%;
+  height: 100%;
   width: 100%;
   background-color: brown;
   display: flex;
