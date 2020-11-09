@@ -1,5 +1,4 @@
 import React from "react";
-import LogOutButton from "./LogOutButton";
 import WorkspaceMenuLeft from "./WorkspaceMenuLeft";
 import WorkspaceMainRecentMain from "./WorkspaceMainRecentMain";
 

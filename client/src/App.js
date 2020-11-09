@@ -3,16 +3,15 @@ import React from "react";
 import About from "./components/About";
 import Home from "./components/Home";
 import Help from "./components/Help";
-import Nav from "./components/Nav";
+import Nav from "./components/Nav/Nav";
 import LogIn from "./components/LogIn";
-import Workspace from "./components/Workspace";
+import Workspace from "./components/Workspace/Workspace";
 import Register from "./components/Register";
-import RegConfirmation from "./components/RegConfirmation";
 import Footer from "./components/Footer";
-import WorkspaceMainAllQuotes from "./components/WorkspaceMainAllQuotes";
-import WorkspaceMainTags from "./components/WorkspaceMainTags";
-import WorkspaceMainRecent from "./components/WorkspaceMainRecent";
-import NavLogin from "./components/NavLogin";
+import WorkspaceMainAllQuotes from "./components/Workspace/WorkspaceMainAllQuotes";
+import WorkspaceMainTags from "./components/Workspace/WorkspaceMainTags";
+import WorkspaceMainRecent from "./components/Workspace/WorkspaceMainRecent";
+import NavLogin from "./components/Nav/NavLogin";
 //----------------Routing--------------------------
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //----------------redux-----------------------------------
@@ -30,7 +29,7 @@ function App() {
             <Route path="/" exact component={Home} />
             <Route path="/workspace" component={Workspace} />
             <Route path="/register" component={Register} />
-            <Route path="/confirmation" component={RegConfirmation} />
+            {/* <Route path="/confirmation" component={RegConfirmation} /> */}
             <Route path="/login" component={LogIn} />
             <Route path="/about" component={About} />
             <Route path="/help" component={Help} />
@@ -51,7 +50,7 @@ function App() {
             <Route path="/" exact component={Home} />
             <Route path="/workspace" component={Workspace} />
             <Route path="/register" component={Register} />
-            <Route path="/confirmation" component={RegConfirmation} />
+            {/* <Route path="/confirmation" component={RegConfirmation} /> */}
             <Route path="/login" component={LogIn} />
             <Route path="/about" component={About} />
             <Route path="/help" component={Help} />

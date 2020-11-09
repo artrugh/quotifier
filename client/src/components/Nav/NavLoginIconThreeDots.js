@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
 //-------------components-------------------
-import LogOutButton from "./LogOutButton";
+import LogOutButton from "../LogOutButton";
 
 function NavLoginIconThreeDots() {
   const dropdownRef = useRef(null);
