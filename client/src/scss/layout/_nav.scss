@@ -90,18 +90,10 @@
 }
 
 .workspace-menu-left-items-link {
-  outline: none;
-  text-decoration: none;
-  color: red($color: #ff0101);
-  font-size: 1.5rem;
   padding: 1rem;
   border: 1px rgb(60, 255, 0) solid;
   display: flex;
   justify-content: center;
-}
-
-.workspace-menu-left-icon-single {
-  font-size: 0.9rem;
 }
 
 .workspace-menu-left-items-button {
@@ -270,7 +262,6 @@
 .menu-left.active {
   opacity: 1;
   visibility: visible;
-  transform: translateY();
   position: relative;
   top: 0px;
   bottom: 20px;
@@ -300,20 +291,19 @@
 
 .menu-left-trigger {
   background: #ff000000;
-  border-radius: 90px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 4px 6px;
-  // box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   border: none;
   vertical-align: middle;
-  transition: box-shadow 0.4s ease;
 }
 
 .menu-left-trigger:hover {
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  color: yellow;
+  outline: none;
+  border: 0;
 }
 
 .menu-left-trigger span {
@@ -324,5 +314,17 @@
 }
 
 .menu-left-trigger img {
-  border-radius: 90px;
+  // border-radius: 90px;
+}
+
+li.workspace-menu-left-icon-single:hover {
+  text-decoration: none;
+  outline: none;
+  border: 0;
+  border: none;
+}
+
+.workspace-menu-left-icon-single.active {
+  transform: rotate(90deg);
+  border: 0;
 }

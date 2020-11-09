@@ -18,7 +18,9 @@ const WorkspaceMenuLeftItems = () => {
           onClick={onClick}
         >
           <FontAwesomeIcon
-            className="workspace-menu-left-icon-single"
+            className={`workspace-menu-left-icon-single ${
+              isActive ? "active" : "inactive"
+            }`}
             icon={faArrowRight}
           />
         </button>{" "}
