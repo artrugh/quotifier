@@ -229,12 +229,13 @@ dataControllers.deleteQuote = (req, res) => {
 
 dataControllers.deleteSource = (req, res) => {
   try {
-    const quote = await Source.findByIdAndDelete(req.params.id);
+    const source = await Source.findByIdAndDelete(req.params.id);
     res.status(200).json(`${source.id} deleted`)
   } catch (err) {
     res.status(500).json({
       message: err.message,
     });
-}
+  }
+};
 
 module.exports = dataControllers;

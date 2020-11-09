@@ -12,5 +12,7 @@ router.get("/getSource/:id", checkUser, dataControllers.getOneSource);
 router.get("/getQuote/:id", checkUser, dataControllers.getOneQuote);
 router.patch("/updateQuote/:id", checkUser, dataControllers.updateQuote);
 router.patch("/updateSource/:id", checkUser, dataControllers.updateSource);
+router.delete("/deleteQuote/:id", checkUser, dataControllers.deleteQuote);
+router.delete("/deleteSource/:id", checkUser, dataControllers.deleteSource);
 
 module.exports = router;
