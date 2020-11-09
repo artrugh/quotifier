@@ -85,6 +85,10 @@
   border: 1px rgb(255, 251, 0) solid;
 }
 
+.workspace-menu-left-items {
+  width: 100%;
+}
+
 .workspace-menu-left-items-link {
   outline: none;
   text-decoration: none;
@@ -92,7 +96,7 @@
   font-size: 1.5rem;
   padding: 1rem;
   border: 1px rgb(60, 255, 0) solid;
-  width: 20rem;
+  // width: 20rem;
   display: flex;
   justify-content: center;
 }
