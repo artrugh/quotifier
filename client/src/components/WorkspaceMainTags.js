@@ -1,6 +1,4 @@
 import React from "react";
-import LogOutButton from "./LogOutButton";
-import WorkspaceMenuTop from "./WorkspaceMenuTop";
 import WorkspaceMenuLeft from "./WorkspaceMenuLeft";
 import WorkspaceMainTagsMain from "./WorkspaceMainTagsMain";
 
@@ -11,7 +9,6 @@ const WorkspaceTagsRecent = () => {
         <WorkspaceMenuLeft />
       </div>
       <div className="workspace-right">
-        <WorkspaceMenuTop />
         <WorkspaceMainTagsMain />
       </div>
     </div>

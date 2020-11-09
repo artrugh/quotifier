@@ -1,5 +1,4 @@
 import React from "react";
-import WorkspaceMenuTop from "./WorkspaceMenuTop";
 import WorkspaceMenuLeft from "./WorkspaceMenuLeft";
 import WorkspaceMainAllQuotesMain from "./WorkspaceMainAllQuotesMain";
 
@@ -10,7 +9,6 @@ const WorkspaceMainAllQuotes = () => {
         <WorkspaceMenuLeft />
       </div>
       <div className="workspace-right">
-        <WorkspaceMenuTop />
         <WorkspaceMainAllQuotesMain />
       </div>
     </div>

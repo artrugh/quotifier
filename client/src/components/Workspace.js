@@ -1,6 +1,4 @@
 import React from "react";
-import LogOutButton from "./LogOutButton";
-import WorkspaceMenuTop from "./WorkspaceMenuTop";
 import WorkspaceMenuLeft from "./WorkspaceMenuLeft";
 import WorkspaceMain from "./WorkspaceMain";
 
@@ -11,7 +9,6 @@ const Workspace = () => {
         <WorkspaceMenuLeft />
       </div>
       <div className="workspace-right">
-        <WorkspaceMenuTop />
         <WorkspaceMain />
       </div>
     </div>

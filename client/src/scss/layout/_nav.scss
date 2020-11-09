@@ -1,13 +1,22 @@
 //-----------------main-nav--------------------------
 
 .nav-container {
-  width: 99.15vw;
-  border: black solid 1px;
+  min-width: 100%;
+  border: rgb(255, 0, 0) solid 1px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.nav-container-login {
+  min-width: 100%;
+  color: green($color: #88ff00);
+  border: rgb(255, 0, 0) solid 1px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .nav-links {
@@ -27,37 +36,45 @@
   align-items: center;
 }
 
+//--------------------login-nav-----------------------------
+
+.menu-top-icons {
+  border: 1px rgb(231, 0, 0) solid;
+  width: 10%;
+  display: flex;
+}
+
 //-----------------workspace-nav-top-------------------------
 
-.workspace-menu-top {
-  height: 7%;
-  width: 100%;
-  background-color: grey;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
+// .workspace-menu-top {
+//   height: 7%;
+//   width: 100%;
+//   background-color: grey;
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: center;
+// }
 
-.workspace-menu-left {
-  height: 100%;
-  width: 100%;
-  background-color: blue;
-}
+// .workspace-menu-left {
+//   height: 100%;
+//   width: 100%;
+//   background-color: blue;
+// }
 
-.workspace-menu-top-icons {
-  border: 1px rgb(231, 0, 0) solid;
-  width: 25%;
-  display: flex;
-  // text-align: right;
-  justify-items: end;
-}
+// .workspace-menu-top-icons {
+//   border: 1px rgb(231, 0, 0) solid;
+//   width: 25%;
+//   display: flex;
+//   // text-align: right;
+//   justify-items: end;
+// }
 
-.workspace-menu-top-buttons {
-  border: 1px black solid;
-  width: 50%;
-  display: flex;
-  justify-content: center;
-}
+// .workspace-menu-top-buttons {
+//   border: 1px black solid;
+//   width: 50%;
+//   display: flex;
+//   justify-content: center;
+// }
 
 //--------------------workspace-nav-left-----------------
 
@@ -90,51 +107,50 @@
   background: none;
 }
 
-//--------------------dropdown-button from icon ----------------
+//--------------------menu top dropdown-button from icon ----------------
 
-.menu-container {
+.dropdown-menu1-container {
   position: relative;
 }
 
-.menu {
-  background: #ffffff;
-  border-radius: 8px;
+.dropdown-menu1 {
+  background: #fb3333;
   position: absolute;
-  top: 60px;
-  right: 0;
+  top: 75px;
+  right: -80px;
   width: 300px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-200px);
-  transform: translateX(-400px);
+  transform: translateY(-300px);
+  transform: translateX(-90px);
   transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
 }
 
-.menu.active {
+.dropdown-menu1.active {
   opacity: 1;
   visibility: visible;
   transform: translateY();
 }
 
-.menu ul {
+.dropdown-menu1 ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.menu li {
+.dropdown-menu1 li {
   border-bottom: 1px solid #dddddd;
 }
 
-.menu li a {
+.dropdown-menu1 li a {
   text-decoration: none;
   color: #333333;
   padding: 15px 20px;
   display: block;
 }
 
-.menu-trigger {
+.dropdown-menu1-trigger {
   background: #ff000000;
   border-radius: 90px;
   cursor: pointer;
@@ -148,34 +164,107 @@
   transition: box-shadow 0.4s ease;
 }
 
-.menu-trigger:hover {
+.dropdown-menu1-trigger:hover {
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
 }
 
-.menu-trigger span {
+.dropdown-menu1-trigger span {
   font-weight: 700;
   vertical-align: middle;
   font-size: 14px;
   margin: 0 10px;
 }
 
-.menu-trigger img {
+.dropdown-menu1-trigger img {
   border-radius: 90px;
 }
 
-//--------------------dropdownbutton from icon ----------------
+//--------------------menu top dropdown-button from icon logout----------------
 
-.menu-container2 {
+.dropdown-menu2-container {
   position: relative;
 }
 
-.menu2 {
+.dropdown-menu2 {
+  background: #fb3333;
+  // border-radius: 8px;
+  position: absolute;
+  top: 75px;
+  right: -80px;
+  width: 300px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-300px);
+  transform: translateX(-90px);
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+}
+
+.dropdown-menu2.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY();
+}
+
+.dropdown-menu2 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu2 li {
+  border-bottom: 1px solid #dddddd;
+}
+
+.dropdown-menu2 li a {
+  text-decoration: none;
+  color: #333333;
+  padding: 15px 20px;
+  display: block;
+}
+
+.dropdown-menu2-trigger {
+  background: #ff000000;
+  border-radius: 90px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 6px;
+  // box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  border: none;
+  vertical-align: middle;
+  transition: box-shadow 0.4s ease;
+}
+
+.dropdown-menu2-trigger:hover {
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-menu2-trigger span {
+  font-weight: 700;
+  vertical-align: middle;
+  font-size: 14px;
+  margin: 0 10px;
+}
+
+.dropdown-menu2-trigger img {
+  border-radius: 90px;
+}
+
+//--------------------menu left dropdown-button from icon----------------
+
+.menu-left-container {
+  position: relative;
+}
+
+.menu-left {
   opacity: 0;
   visibility: hidden;
   position: absolute;
 }
 
-.menu2.active2 {
+.menu-left.active {
   opacity: 1;
   visibility: visible;
   transform: translateY();
@@ -189,24 +278,24 @@
   text-align: center;
 }
 
-.menu2 ul {
+.menu-left ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.menu2 li {
+.menu-left li {
   border-bottom: 1px solid #dddddd;
 }
 
-.menu2 li a {
+.menu-left li a {
   text-decoration: none;
   color: #333333;
   padding: 15px 20px;
   display: block;
 }
 
-.menu2-trigger2 {
+.menu-left-trigger {
   background: #ff000000;
   border-radius: 90px;
   cursor: pointer;
@@ -220,17 +309,17 @@
   transition: box-shadow 0.4s ease;
 }
 
-.menu2-trigger2:hover {
+.menu-left-trigger:hover {
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
 }
 
-.menu2-trigger2 span {
+.menu-left-trigger span {
   font-weight: 700;
   vertical-align: middle;
   font-size: 14px;
   margin: 0 10px;
 }
 
-.menu2-trigger2 img {
+.menu-left-trigger img {
   border-radius: 90px;
 }

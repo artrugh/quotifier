@@ -3,25 +3,24 @@ import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 //----------------icons-----------------------
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEllipsisV, faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 
-const WorkspaceMenuTopIcons = () => {
+function NavLoginIconAvatar() {
   const dropdownRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
   const onClick = () => setIsActive(!isActive);
 
   return (
-    <div className="workspace-menu-top-icons menu-container">
-      <button onClick={onClick} className="menu-trigger">
+    <div className="dropdown-menu1-container">
+      <button onClick={onClick} className="dropdown-menu1-trigger">
         <FontAwesomeIcon
           className="workspace-menu-top-icon-single"
           icon={faUserCircle}
         />
       </button>
-
       <nav
         ref={dropdownRef}
-        className={`menu ${isActive ? "active" : "inactive"}`}
+        className={`dropdown-menu1 ${isActive ? "active" : "inactive"}`}
       >
         <ul>
           <li>
@@ -35,15 +34,8 @@ const WorkspaceMenuTopIcons = () => {
           </li>
         </ul>
       </nav>
-
-      <button onClick={onClick} className="menu-trigger-logout">
-        <FontAwesomeIcon
-          className="workspace-menu-top-icon-single"
-          icon={faEllipsisV}
-        />
-      </button>
     </div>
   );
-};
+}
 
-export default WorkspaceMenuTopIcons;
+export default NavLoginIconAvatar;

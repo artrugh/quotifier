@@ -11,9 +11,12 @@ const WorkspaceMenuLeftItems = () => {
   const onClick = () => setIsActive(!isActive);
 
   return (
-    <ul className="workspace-menu-left-items menu-container2">
-      <li className="workspace-menu-left-items-link menu-trigger2">
-        <button className="workspace-menu-left-items-button" onClick={onClick}>
+    <ul className="workspace-menu-left-items menu-left-container">
+      <li className="workspace-menu-left-items-link">
+        <button
+          className="workspace-menu-left-items-button menu-left-trigger"
+          onClick={onClick}
+        >
           <FontAwesomeIcon
             className="workspace-menu-left-icon-single"
             icon={faArrowRight}
@@ -24,7 +27,7 @@ const WorkspaceMenuLeftItems = () => {
 
       <ul
         ref={dropdownRef}
-        className={`menu2 ${isActive ? "active2" : "inactive2"}`}
+        className={`menu-left ${isActive ? "active" : "inactive"}`}
       >
         <li>
           <Link to="/lastquote1">last quote 1 </Link>
