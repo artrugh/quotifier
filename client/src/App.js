@@ -15,32 +15,29 @@ import { useSelector } from "react-redux";
 
 function App() {
   //------redux---------------------------------------
-  let navigation = Nav;
-  if (isLogged) {
-    navigation = NavLogin;
-  }
   const isLogged = useSelector((state) => state.isLogged);
+  let Navigation = <Nav />;
   if (isLogged) {
-    return (
-      <Router>
-        <div className="app">
-          {Navigation}
-          <Switch>
-            <Route
-              exact
-              path="/"
-              component={() => (isLogged ? <Workspace /> : <Home />)}
-            />
-            <Route path="/register" component={Register} />
-            <Route path="/login" component={LogIn} />
-            <Route path="/about" component={About} />
-            <Route path="/help" component={Help} />
-          </Switch>
-          <Footer />
-        </div>
-      </Router>
-    );
+    Navigation = <NavLogin />;
   }
+  return (
+    <Router>
+      <div className="app">
+        {Navigation}
+        <Switch>
+          <Route
+            exact
+            path="/"
+            component={() => (isLogged ? <Workspace /> : <Home />)}
+          />
+          <Route path="/register" component={Register} />
+          <Route path="/login" component={LogIn} />
+          <Route path="/help" component={Help} />
+        </Switch>
+        <Footer />
+      </div>
+    </Router>
+  );
 }
 
 export default App;
