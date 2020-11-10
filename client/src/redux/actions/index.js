@@ -48,3 +48,17 @@ export const loadQuotes = (quotes) => {
     payload: quotes,
   };
 };
+
+export const addSource = (source) => {
+  return {
+    type: "ADD_SOURCE",
+    payload: source,
+  };
+};
+
+export const addQuote = (quote) => {
+  return {
+    type: "ADD_QUOTE",
+    payload: quote,
+  };
+};

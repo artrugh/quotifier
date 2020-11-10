@@ -1,11 +1,10 @@
 import React, { useState, useRef } from "react";
-//---------Routing-------------------------------
-import { Link } from "react-router-dom";
+
 //----------------icons-----------------------
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
 //-------------components-------------------
-import LogOutButton from "../LogOutButton";
+import LogOutButton from "./LogOutButton";
 
 function NavLoginIconThreeDots() {
   const dropdownRef = useRef(null);
@@ -27,9 +26,7 @@ function NavLoginIconThreeDots() {
       >
         <ul>
           <li>
-            <Link to="/Logout">
-              <LogOutButton />{" "}
-            </Link>
+            <LogOutButton />
           </li>
         </ul>
       </nav>

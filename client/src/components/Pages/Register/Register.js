@@ -1,6 +1,5 @@
 import React from "react";
 import RegisterForm from "./RegisterForm";
-import Footer from "./Footer";
 
 function Register() {
   return (

@@ -1,16 +1,12 @@
 import React from "react";
 //--------------components----------------------------
-import About from "./components/About";
-import Home from "./components/Home";
-import Help from "./components/Help";
+import Home from "./components/Pages/Home/Home";
+import Help from "./components/Pages/Help/Help";
 import Nav from "./components/Nav/Nav";
-import LogIn from "./components/LogIn";
+import LogIn from "./components/Pages/Login/LogIn";
 import Workspace from "./components/Workspace/Workspace";
-import Register from "./components/Register";
-import Footer from "./components/Footer";
-import WorkspaceMainAllQuotes from "./components/Workspace/WorkspaceMainAllQuotes";
-import WorkspaceMainTags from "./components/Workspace/WorkspaceMainTags";
-import WorkspaceMainRecent from "./components/Workspace/WorkspaceMainRecent";
+import Register from "./components/Pages/Register/Register";
+import Footer from "./components/Footer/Footer";
 import NavLogin from "./components/Nav/NavLogin";
 //----------------Routing--------------------------
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -26,15 +22,8 @@ function App() {
         <div className="app">
           <NavLogin />
           <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/workspace" component={Workspace} />
-            <Route path="/register" component={Register} />
-            <Route path="/login" component={LogIn} />
-            <Route path="/about" component={About} />
+            <Route exact path="/" component={Workspace} />
             <Route path="/help" component={Help} />
-            <Route path="/allquotes" component={WorkspaceMainAllQuotes} />
-            <Route path="/recent" component={WorkspaceMainRecent} />
-            <Route path="/tags" component={WorkspaceMainTags} />
           </Switch>
           <Footer />
         </div>
@@ -47,14 +36,9 @@ function App() {
           <Nav />
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/workspace" component={Workspace} />
             <Route path="/register" component={Register} />
             <Route path="/login" component={LogIn} />
-            <Route path="/about" component={About} />
             <Route path="/help" component={Help} />
-            <Route path="/allquotes" component={WorkspaceMainAllQuotes} />
-            <Route path="/recent" component={WorkspaceMainRecent} />
-            <Route path="/tags" component={WorkspaceMainTags} />
           </Switch>
           <Footer />
         </div>

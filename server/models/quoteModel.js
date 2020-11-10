@@ -20,11 +20,15 @@ const quoteSchema = Schema(
 
 // static method to make sure object exists
 quoteSchema.statics.quoteCheck = async function (id) {
-  const quote = await this.findById(id);
-  if (quote) {
-    return quote;
+  try {
+    const quote = await this.findById(id);
+    if (quote) {
+      return quote;
+    }
+    throw Error("Quote Does Not Exist");
+  } catch (err) {
+    console.log(err);
   }
-  throw Error("Quote Does Not Exist");
 };
 
 const Quote = mongoose.model("Quote", quoteSchema);

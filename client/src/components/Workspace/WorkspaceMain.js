@@ -6,8 +6,8 @@ const WorkspaceMain = () => {
 
   return (
     <div className="workspace-main">
+      <h2>Hello {userName}.</h2>
       <p className="text">
-        <h2>Hello {userName}.</h2>
         here you can implement all your quotes and find them every time you need
         them just by clicking on the tags{" "}
       </p>
