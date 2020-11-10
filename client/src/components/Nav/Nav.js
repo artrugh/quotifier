@@ -9,12 +9,6 @@ function Nav() {
         <li className="nav-link home-link">
           <Link to="/">Home</Link>
         </li>
-        {/* <li className="nav-link about-link">
-          <Link to="/about">About</Link>
-        </li>
-        <li className="nav-link help-link">
-          <Link to="/help">Help</Link>
-        </li> */}
         <li className="nav-link sign-in-link">
           <Link to="/login">Sign in</Link>
         </li>

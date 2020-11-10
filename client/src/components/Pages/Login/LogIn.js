@@ -1,6 +1,5 @@
 import React from "react";
 import LogInForm from "./LoginForm";
-import Footer from "./Footer";
 
 function SignIn() {
   return (

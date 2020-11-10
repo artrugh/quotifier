@@ -1,5 +1,5 @@
 import React from "react";
-import { logout } from "../redux/actions";
+import { logout } from "../../redux/actions";
 import { useDispatch } from "react-redux";
 const axios = require("axios");
 

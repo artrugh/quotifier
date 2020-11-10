@@ -1,21 +1,18 @@
 import React from "react";
-import WorkspaceMenuTop from "./WorkspaceMenuTop";
 import WorkspaceMenuLeft from "./WorkspaceMenuLeft";
-import WorkspaceMain from "./WorkspaceMain";
+import WorkspaceMainAllQuotesMain from "./WorkspaceMainAllQuotesMain";
 
-const Workspace = () => {
+const WorkspaceMainAllQuotes = () => {
   return (
     <div className="workspace">
       <div className="workspace-left">
         <WorkspaceMenuLeft />
       </div>
-
       <div className="workspace-right">
-        <WorkspaceMenuTop />
-        <WorkspaceMain />
+        <WorkspaceMainAllQuotesMain />
       </div>
     </div>
   );
 };
 
-export default Workspace;
+export default WorkspaceMainAllQuotes;

@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import { login, loadSources, getUser, loadQuotes } from "../redux/actions";
+import {
+  login,
+  loadSources,
+  getUser,
+  loadQuotes,
+} from "../../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import { getSources, getQuotes } from "../helpers/getUserData";
+import { getSources, getQuotes } from "../../../helpers/getUserData";
 
 const axios = require("axios");
 
@@ -21,8 +26,6 @@ const LoginForm = () => {
     },
     data: { email: email, password: password },
   };
-
-  const isLogged = useSelector((state) => state.isLogged);
 
   const getData = async () => {
     const sources = await getSources();
