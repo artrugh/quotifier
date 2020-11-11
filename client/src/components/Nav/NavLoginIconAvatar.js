@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 //---------Routing-------------------------------
 import { Link } from "react-router-dom";
 //----------------icons-----------------------
@@ -9,6 +9,25 @@ function NavLoginIconAvatar() {
   const dropdownRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
   const onClick = () => setIsActive(!isActive);
+
+  //-----------if click somewhere else dropdown closes-------------------
+  useEffect(() => {
+    const pageClickEvent = (e) => {
+      // if the active element  exists and is clicked outside of
+      if (
+        dropdownRef.current !== null &&
+        !dropdownRef.current.contains(e.target)
+      ) {
+        setIsActive(!isActive);
+      }
+    };
+
+    if (isActive) {
+      window.addEventListener("click", pageClickEvent);
+    }
+    return () => window.removeEventListener("click", pageClickEvent);
+  }, [isActive]);
+  //------------------------------------------------------------------
 
   return (
     <div className="dropdown-menu1-container">
