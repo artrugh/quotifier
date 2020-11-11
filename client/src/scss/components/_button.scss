@@ -14,3 +14,18 @@
 .workspace-menu-top-button-single {
   margin: 1rem 2rem;
 }
+
+.workspace-menu-left-items-button-big {
+  padding: 3rem 1rem;
+  border: 1px $base-color-light solid;
+  @include justifyCenter;
+}
+
+.workspace-menu-left-items-button-big a {
+  color: white;
+  text-decoration: none;
+  border: yellow solid 1px;
+  padding: 0.5rem 1.5rem;
+  background-color: yellowgreen;
+  border-radius: 30px;
+}
