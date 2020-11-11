@@ -1,3 +1,5 @@
+//------home section--------------------------------------
+
 .about-single-button-dark {
   @include singleButton;
   background-color: $mid-color-mid;
@@ -20,7 +22,7 @@
 //-------workspace-menu-left--------------------------
 
 .workspace-menu-left-items-button.menu-left-trigger {
-  color: yellow;
+  color: $base-color-light;
   padding-right: 0.5rem;
 }
 
@@ -29,11 +31,11 @@ li.workspace-menu-left-items-button-big button {
   background-color: $mid-color-mid;
   border-radius: 30px;
   border: $mid-color-light solid 1px;
-  padding: 0.3rem 1.5rem;
+  padding: 0.2rem 1.5rem;
 }
 
 .workspace-menu-left-items-button-big {
-  padding: 1rem 1rem;
+  padding: 0.8rem 1rem;
   // border: 1px $base-color-light solid;
   @include justifyCenter;
 }
@@ -50,25 +52,18 @@ li.workspace-menu-left-items-button-big button {
   padding-right: 0.5rem;
 }
 
-// .workspace-menu-left-items-button-new-quote:last-child {
-//   padding-left: 0.3rem;
+// .workspace-menu-left-items-button-big a {
+// color: white;
+// text-decoration: none;
+// border: yellow solid 1px;
+// padding: 0.5rem 1.5rem;
+// background-color: $mid-color-mid;
+// border-radius: 30px;
 // }
-
-// .workspace-menu-left-items-button-new-quote {
-//   font-size: x-small;
-// }
-
-.workspace-menu-left-items-button-big a {
-  color: white;
-  text-decoration: none;
-  border: yellow solid 1px;
-  padding: 0.5rem 1.5rem;
-  background-color: $mid-color-mid;
-  border-radius: 30px;
-}
 
 .workspace-menu-left-items-button-big a:hover,
 li.workspace-menu-left-items-button-big button:hover {
   background-color: $mid-color-light;
   cursor: pointer;
+  transform: translateY(3px);
 }

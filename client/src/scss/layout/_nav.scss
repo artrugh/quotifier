@@ -13,7 +13,6 @@
 
 .nav-container-login {
   min-width: 100%;
-  border: rgb(255, 0, 0) solid 1px;
   display: flex;
   justify-content: flex-end;
   background-color: $mid-color-light;
@@ -61,7 +60,7 @@
 }
 
 .workspace-menu-left-items-link:hover {
-  border: 1px $base-color-light solid;
+  border-bottom: 1px $base-color-light solid;
 }
 
 .workspace-menu-left-items-button {

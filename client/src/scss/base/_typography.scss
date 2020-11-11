@@ -62,13 +62,15 @@ p {
   font-size: 2rem;
 }
 
+//-----------workspace-nav-left----------------------------------------
+
 // font all items on left nav
 li.workspace-menu-left-items-link,
 .menu-left.active,
 .workspace-menu-left-items-button-big a,
 li.workspace-menu-left-items-button-big button {
   font-family: "Source Sans Pro";
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: $base-color-light;
 }
 
@@ -77,11 +79,10 @@ li.workspace-menu-left-items-link a {
   color: $base-color-light;
 }
 
+// arrow button for dropdown
 .workspace-menu-left-icon-single {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
-
-//-----------workspace-nav-left----------------------------------------
 
 .workspace-menu-left-items-button {
   color: $base-color-light;
