@@ -1,5 +1,5 @@
 import React from "react";
-import WorkspaceMenuLeft from "./WorkspaceMenuLeft";
+import WorkspaceMenuLeft from "./Menu/WorkspaceMenuLeft";
 import WorkspaceMain from "./WorkspaceMain";
 
 const Workspace = () => {
