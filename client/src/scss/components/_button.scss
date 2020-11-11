@@ -11,21 +11,64 @@
   width: 20rem;
 }
 
+//-------workspace-menu-top--------------------------
+
 .workspace-menu-top-button-single {
   margin: 1rem 2rem;
 }
 
+//-------workspace-menu-left--------------------------
+
+.workspace-menu-left-items-button.menu-left-trigger {
+  color: yellow;
+  padding-right: 0.5rem;
+}
+
+li.workspace-menu-left-items-button-big button {
+  @include buttonUnStyle;
+  background-color: $mid-color-mid;
+  border-radius: 30px;
+  border: $mid-color-light solid 1px;
+  padding: 0.3rem 1.5rem;
+}
+
 .workspace-menu-left-items-button-big {
-  padding: 3rem 1rem;
-  border: 1px $base-color-light solid;
+  padding: 1rem 1rem;
+  // border: 1px $base-color-light solid;
   @include justifyCenter;
 }
+
+.workspace-menu-left-items-button-big:first-child {
+  padding-top: 2rem;
+}
+
+.workspace-menu-left-items-button-big:nth-child(3) {
+  padding-bottom: 2rem;
+}
+
+.test-test {
+  padding-right: 0.5rem;
+}
+
+// .workspace-menu-left-items-button-new-quote:last-child {
+//   padding-left: 0.3rem;
+// }
+
+// .workspace-menu-left-items-button-new-quote {
+//   font-size: x-small;
+// }
 
 .workspace-menu-left-items-button-big a {
   color: white;
   text-decoration: none;
   border: yellow solid 1px;
   padding: 0.5rem 1.5rem;
-  background-color: yellowgreen;
+  background-color: $mid-color-mid;
   border-radius: 30px;
+}
+
+.workspace-menu-left-items-button-big a:hover,
+li.workspace-menu-left-items-button-big button:hover {
+  background-color: $mid-color-light;
+  cursor: pointer;
 }
