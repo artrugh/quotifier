@@ -1,7 +1,13 @@
+import produce from "immer";
+
 const quotesReducer = (state = [], action) => {
   switch (action.type) {
     case "SHOW_ALL_QUOTES":
-      let allQuotesArr = action.payload;
+      const baseState = state;
+      const newArr = action.payload;
+      const allQuotesArr = produce(baseState, (draft) => {
+        newArr.forEach((quote) => draft.push(quote));
+      });
       return allQuotesArr;
     default:
       return state;
