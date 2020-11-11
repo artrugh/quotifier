@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
+import AllQuotes from "./AllQuotes.js";
+
 const WorkspaceMenuLeftItems = () => {
   const dropdownRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
@@ -46,9 +48,7 @@ const WorkspaceMenuLeftItems = () => {
         <Link to="/recent">Recent </Link>
       </li>
 
-      <li className="workspace-menu-left-items-link">
-        <Link to="/allquotes">All Quotes</Link>
-      </li>
+      <AllQuotes />
 
       <li className="workspace-menu-left-items-link">
         <Link to="/Tags">Tags</Link>

@@ -62,3 +62,10 @@ export const addQuote = (quote) => {
     payload: quote,
   };
 };
+
+export const showAllQuotes = (quotes) => {
+  return {
+    type: "SHOW_ALL_QUOTES",
+    payload: quotes,
+  };
+};
