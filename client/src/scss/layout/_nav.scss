@@ -1,9 +1,9 @@
 //-----------------main-nav--------------------------
 
 .nav-container {
+  background-color: $base-color-light;
   min-width: 100%;
-  border: rgb(255, 0, 0) solid 1px;
-
+  border: rgb(0, 255, 13) solid 1px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -13,17 +13,14 @@
 
 .nav-container-login {
   min-width: 100%;
-  color: green($color: #88ff00);
   border: rgb(255, 0, 0) solid 1px;
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
   background-color: $mid-color-light;
 }
 
 .nav-links {
-  display: flex;
-  justify-content: center;
+  @include justifyCenter;
   list-style-type: none;
   margin-right: 4rem;
 }
@@ -33,24 +30,22 @@
   width: 7rem;
   height: 2.5rem;
   margin: 0 0.5rem;
-  display: flex;
-  justify-content: center;
+  @include justifyCenter;
   align-items: center;
 }
 
 //--------------------login-nav-----------------------------
 
 .menu-top-icons {
-  border: 1px rgb(231, 0, 0) solid;
-  width: 10%;
+  border: 1px rgb(0, 35, 231) solid;
   display: flex;
+  padding-right: 1rem;
 }
 
 //--------------------workspace-nav-left-----------------
 
 .workspace-menu-left {
-  display: flex;
-  justify-content: center;
+  @include justifyCenter;
   padding-top: 2rem;
   border: 1px $base-color-light solid;
 }
@@ -62,8 +57,7 @@
 .workspace-menu-left-items-link {
   padding: 1rem;
   border: 1px $base-color-light solid;
-  display: flex;
-  justify-content: center;
+  @include justifyCenter;
 }
 
 .workspace-menu-left-items-button {
@@ -127,6 +121,8 @@
   border: none;
   vertical-align: middle;
   transition: box-shadow 0.4s ease;
+  outline: none;
+  color: $base-color-dark;
 }
 
 .dropdown-menu1-trigger:hover {
@@ -141,7 +137,7 @@
 }
 
 .dropdown-menu1-trigger img {
-  border-radius: 90px;
+  // border-radius: 90px;
 }
 
 //--------------------menu top dropdown-button from icon logout----------------
@@ -300,9 +296,9 @@ li.workspace-menu-left-icon-single:hover {
 }
 
 li.workspace-menu-left-items-link button {
-  text-decoration: none;
+  // text-decoration: none;
   outline: none;
-  border: 0;
+  // border: 0;
   border: none;
   background: none;
   color: $base-color-light;

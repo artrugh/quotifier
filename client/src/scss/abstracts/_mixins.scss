@@ -9,3 +9,8 @@
   border-radius: 30px;
   padding: 1rem;
 }
+
+@mixin justifyCenter {
+  display: flex;
+  justify-content: center;
+}
