@@ -5,22 +5,37 @@ const mongoose = require("mongoose");
 const { findById } = require("../models/userModel");
 dataControllers = {};
 
+// dataControllers.addSource = async (req, res) => {
+//   const currentUser = res.locals.user;
+//   try {
+//     const source = await Source.create({
+//       _id: new mongoose.Types.ObjectId(),
+//       user: currentUser.id,
+//       author: req.body.author,
+//       sourceTitle: req.body.sourceTitle,
+//       containerTitle: req.body.containerTitle,
+//       otherContributors: req.body.otherContributors,
+//       editor: req.body.editor,
+//       translator: req.body.translator,
+//       version: req.body.version,
+//       number: req.body.number,
+//       publisher: req.body.publisher,
+//       pubDate: req.body.pubDate,
+//     });
+//     res.status(201).json(source);
+//   } catch (err) {
+//     res.status(400).json({ message: err.message });
+//   }
+// };
+
 dataControllers.addSource = async (req, res) => {
   const currentUser = res.locals.user;
   try {
     const source = await Source.create({
       _id: new mongoose.Types.ObjectId(),
       user: currentUser.id,
-      author: req.body.author,
       sourceTitle: req.body.sourceTitle,
-      containerTitle: req.body.containerTitle,
-      otherContributors: req.body.otherContributors,
-      editor: req.body.editor,
-      translator: req.body.translator,
-      version: req.body.version,
-      number: req.body.number,
-      publisher: req.body.publisher,
-      pubDate: req.body.pubDate,
+      sourceInfo: req.body.sourceInfo,
     });
     res.status(201).json(source);
   } catch (err) {
@@ -174,40 +189,58 @@ dataControllers.updateQuote = async (req, res, next) => {
   }
 };
 
+// dataControllers.updateSource = async (req, res, next) => {
+//   const id = req.params.id;
+//   const changes = req.body;
+//   try {
+//     const source = await Source.sourceCheck(id);
+//     if (req.body.author !== undefined) {
+//       source.author = changes.author;
+//     }
+//     if (req.body.sourceTitle !== undefined) {
+//       source.sourceTitle = changes.sourceTitle;
+//     }
+//     if (req.body.containerTitle !== undefined) {
+//       source.containerTitle = changes.containerTitle;
+//     }
+//     if (req.body.otherContributors !== undefined) {
+//       source.otherContributors = changes.otherContributors;
+//     }
+//     if (req.body.editor !== undefined) {
+//       source.editor = changes.editor;
+//     }
+//     if (req.body.translator !== undefined) {
+//       source.translator = changes.translator;
+//     }
+//     if (req.body.version !== undefined) {
+//       source.version = changes.version;
+//     }
+//     if (req.body.number !== undefined) {
+//       source.number = changes.number;
+//     }
+//     if (req.body.publisher !== undefined) {
+//       source.publisher = changes.publisher;
+//     }
+//     if (req.body.pubDate !== undefined) {
+//       source.editor = changes.pubDate;
+//     }
+//     await source.save();
+//     res.json(source);
+//   } catch (err) {
+//     console.log(err.message);
+//   }
+// };
+
 dataControllers.updateSource = async (req, res, next) => {
   const id = req.params.id;
   const changes = req.body;
   try {
     const source = await Source.sourceCheck(id);
-    if (req.body.author !== undefined) {
-      source.author = changes.author;
-    }
     if (req.body.sourceTitle !== undefined) {
       source.sourceTitle = changes.sourceTitle;
     }
-    if (req.body.containerTitle !== undefined) {
-      source.containerTitle = changes.containerTitle;
-    }
-    if (req.body.otherContributors !== undefined) {
-      source.otherContributors = changes.otherContributors;
-    }
-    if (req.body.editor !== undefined) {
-      source.editor = changes.editor;
-    }
-    if (req.body.translator !== undefined) {
-      source.translator = changes.translator;
-    }
-    if (req.body.version !== undefined) {
-      source.version = changes.version;
-    }
-    if (req.body.number !== undefined) {
-      source.number = changes.number;
-    }
-    if (req.body.publisher !== undefined) {
-      source.publisher = changes.publisher;
-    }
-    if (req.body.pubDate !== undefined) {
-      source.editor = changes.pubDate;
+    if (req.body.sourceInfo !== undefined) {
+      source.sourceInfo = changes.sourceInfo;
     }
     await source.save();
     res.json(source);
