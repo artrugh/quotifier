@@ -92,7 +92,7 @@ const RegisterForm = () => {
         autoComplete="on"
         required
       />
-      <button className="input register-button" type="submit" value="Submit">
+      <button className="register-button" type="submit" value="Submit">
         Submit
       </button>
     </form>

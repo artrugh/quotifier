@@ -80,7 +80,7 @@ const LoginForm = () => {
         autoComplete="on"
         required
       />
-      <button className="input sign-in-button" type="submit" value="Submit">
+      <button className="sign-in-button" type="submit" value="Submit">
         Submit
       </button>
     </form>

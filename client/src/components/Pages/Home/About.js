@@ -3,7 +3,7 @@ import React from "react";
 function About() {
   return (
     <div className="about">
-      <h2>About</h2>
+      <h2 className="home-header">Welcome!</h2>
       <p className="text">
         never miss a quote again! with quotifier you can keep all your quotes
         saved and easily find them back whenever you need them.{" "}
