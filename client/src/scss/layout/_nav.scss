@@ -3,6 +3,7 @@
 .nav-container {
   min-width: 100%;
   border: rgb(255, 0, 0) solid 1px;
+
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -17,6 +18,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+  background-color: $mid-color-light;
 }
 
 .nav-links {
@@ -44,45 +46,13 @@
   display: flex;
 }
 
-//-----------------workspace-nav-top-------------------------
-
-// .workspace-menu-top {
-//   height: 7%;
-//   width: 100%;
-//   background-color: grey;
-//   display: flex;
-//   justify-content: space-around;
-//   align-items: center;
-// }
-
-// .workspace-menu-left {
-//   height: 100%;
-//   width: 100%;
-//   background-color: blue;
-// }
-
-// .workspace-menu-top-icons {
-//   border: 1px rgb(231, 0, 0) solid;
-//   width: 25%;
-//   display: flex;
-//   // text-align: right;
-//   justify-items: end;
-// }
-
-// .workspace-menu-top-buttons {
-//   border: 1px black solid;
-//   width: 50%;
-//   display: flex;
-//   justify-content: center;
-// }
-
 //--------------------workspace-nav-left-----------------
 
 .workspace-menu-left {
   display: flex;
   justify-content: center;
   padding-top: 2rem;
-  border: 1px rgb(255, 251, 0) solid;
+  border: 1px $base-color-light solid;
 }
 
 .workspace-menu-left-items {
@@ -91,7 +61,7 @@
 
 .workspace-menu-left-items-link {
   padding: 1rem;
-  border: 1px rgb(60, 255, 0) solid;
+  border: 1px $base-color-light solid;
   display: flex;
   justify-content: center;
 }
@@ -109,7 +79,7 @@
 }
 
 .dropdown-menu1 {
-  background: #fb3333;
+  background: $base-color-light;
   position: absolute;
   top: 75px;
   right: -80px;
@@ -125,7 +95,7 @@
 .dropdown-menu1.active {
   opacity: 1;
   visibility: visible;
-  transform: translateY();
+  // transform: translateY();
 }
 
 .dropdown-menu1 ul {
@@ -135,18 +105,18 @@
 }
 
 .dropdown-menu1 li {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid $mid-color-dark;
 }
 
 .dropdown-menu1 li a {
   text-decoration: none;
-  color: #333333;
+  color: $base-color-dark;
   padding: 15px 20px;
   display: block;
 }
 
 .dropdown-menu1-trigger {
-  background: #ff000000;
+  background: #f0000000;
   border-radius: 90px;
   cursor: pointer;
   display: flex;
@@ -160,7 +130,7 @@
 }
 
 .dropdown-menu1-trigger:hover {
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  color: $mid-color-mid;
 }
 
 .dropdown-menu1-trigger span {
@@ -182,7 +152,7 @@
 
 .dropdown-menu2 {
   background: #fb3333;
-  // border-radius: 8px;
+  border-radius: 8px;
   position: absolute;
   top: 75px;
   right: -80px;
@@ -233,7 +203,7 @@
 }
 
 .dropdown-menu2-trigger:hover {
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  color: $mid-color-mid;
 }
 
 .dropdown-menu2-trigger span {
@@ -244,7 +214,7 @@
 }
 
 .dropdown-menu2-trigger img {
-  border-radius: 90px;
+  // border-radius: 90px;
 }
 
 //--------------------menu left dropdown-button from icon----------------
@@ -266,7 +236,7 @@
   top: 0px;
   bottom: 20px;
   right: 0px;
-  background-color: green;
+  background-color: $mid-color-dark;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -279,18 +249,18 @@
 }
 
 .menu-left li {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid $base-color-light;
 }
 
 .menu-left li a {
   text-decoration: none;
-  color: #333333;
+  color: $base-color-light;
   padding: 15px 20px;
   display: block;
 }
 
 .menu-left-trigger {
-  background: #ff000000;
+  // background: $base-color-light;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -301,7 +271,7 @@
 }
 
 .menu-left-trigger:hover {
-  color: yellow;
+  color: $mid-color-light;
   outline: none;
   border: 0;
 }
@@ -313,9 +283,9 @@
   margin: 0 10px;
 }
 
-.menu-left-trigger img {
-  // border-radius: 90px;
-}
+// .menu-left-trigger img {
+//   // border-radius: 90px;
+// }
 
 li.workspace-menu-left-icon-single:hover {
   text-decoration: none;
@@ -327,4 +297,13 @@ li.workspace-menu-left-icon-single:hover {
 .workspace-menu-left-icon-single.active {
   transform: rotate(90deg);
   border: 0;
+}
+
+li.workspace-menu-left-items-link button {
+  text-decoration: none;
+  outline: none;
+  border: 0;
+  border: none;
+  background: none;
+  color: $base-color-light;
 }

@@ -3,7 +3,7 @@ import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 //----------------icons-----------------------
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
 import AllQuotes from "./AllQuotes.js";
 
@@ -23,10 +23,10 @@ const WorkspaceMenuLeftItems = () => {
             className={`workspace-menu-left-icon-single ${
               isActive ? "active" : "inactive"
             }`}
-            icon={faArrowRight}
+            icon={faPlay}
           />
-        </button>{" "}
-        Dropdown
+        </button>
+        Favourites
       </li>
 
       <ul

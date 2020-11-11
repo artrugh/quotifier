@@ -30,23 +30,32 @@ p {
   font-size: 2rem;
 }
 
+//--------------nav----------------------------------------------
+
 .nav-link {
   font-size: 1.2rem;
+  color: $base-color-light;
 }
+
+//--------------text------------------------------------------------
 
 .text-quote {
   font-size: 3.5rem;
 }
 
+//-----------------footer--------------------------------------------
+
 .footer-icons-single {
-  color: white;
+  color: $base-color-light;
   font-size: 5rem;
 }
 
 .text-footer {
-  color: white;
+  color: $base-color-light;
   font-size: 1.5rem;
 }
+
+//--------------------workspace-----------------------------------------
 
 .workspace-menu-top-icon-single {
   margin: 1rem;
@@ -57,13 +66,20 @@ li.workspace-menu-left-items-link,
 .menu-left.active {
   font-family: "Source Sans Pro";
   font-size: 1.5rem;
+  color: $base-color-light;
 }
 
 li.workspace-menu-left-items-link a {
   text-decoration: none;
-  color: black;
+  color: $base-color-light;
 }
 
 .workspace-menu-left-icon-single {
   font-size: 0.9rem;
+}
+
+//-----------workspace-nav-left----------------------------------------
+
+.workspace-menu-left-items-button {
+  color: $base-color-light;
 }

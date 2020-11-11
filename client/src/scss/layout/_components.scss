@@ -94,7 +94,7 @@
 .footer-all {
   padding: 3rem;
   width: 100%;
-  background-color: $mid-color-dark;
+  background-color: $base-color-dark;
   display: flex;
   justify-content: center;
 }
@@ -105,12 +105,12 @@
 
 ul.footer-left {
   padding: 2rem;
-  border: 1px solid black;
+  //   border: 1px solid black;
 }
 
 ul.footer-middle {
   padding: 2rem;
-  border: 1px solid black;
+  // border: 1px solid black;
 }
 
 .footer-right {
@@ -137,7 +137,7 @@ ul.footer-middle {
 }
 
 .workspace-left {
-  background: green;
+  background: $mid-color-dark;
   width: 15%;
   height: 100vh;
 }
@@ -145,7 +145,7 @@ ul.footer-middle {
 .workspace-main {
   height: 100%;
   width: 100%;
-  background-color: brown;
+  background-color: $base-color-light;
   display: flex;
   flex-direction: column;
   justify-content: center;
