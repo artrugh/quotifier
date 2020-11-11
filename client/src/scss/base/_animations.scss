@@ -1,3 +1,5 @@
+//-----loading animation----------------------
+
 $thickness: 5px;
 $duration: 2500;
 $delay: $duration/6;
@@ -267,4 +269,23 @@ body {
     opacity: 0;
     transform: translateX(0px) rotateZ(-90deg);
   }
+}
+
+//--------------scrolling effect-----------------------
+
+.about {
+  // position: fixed;
+  // z-index: -1;
+}
+
+.sign-up {
+  // position: sticky;
+  // position: fixed;
+  // position: relative;
+
+  // z-index: 4;
+}
+
+.quote {
+  // z-index: -4;
 }

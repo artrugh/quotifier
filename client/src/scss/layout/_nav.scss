@@ -3,12 +3,15 @@
 .nav-container {
   background-color: $base-color-light;
   min-width: 100%;
-  border: rgb(0, 255, 13) solid 1px;
+  // border: rgb(0, 255, 13) solid 1px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  position: fixed;
+  box-shadow: 5px 20px back;
+  z-index: 1;
 }
 
 .nav-container-login {
@@ -33,6 +36,11 @@
   align-items: center;
 }
 
+li.nav-link a {
+  text-decoration: none;
+  color: $base-color-dark;
+}
+
 //--------------------login-nav-----------------------------
 
 .menu-top-icons {
@@ -46,7 +54,6 @@
 .workspace-menu-left {
   @include justifyCenter;
   padding-top: 2rem;
-  // border: 1px $base-color-light solid;
 }
 
 .workspace-menu-left-items {
@@ -55,7 +62,6 @@
 
 .workspace-menu-left-items-link {
   padding: 1rem;
-  // border: 1px $base-color-light solid;
   @include justifyCenter;
 }
 
@@ -65,6 +71,14 @@
 
 .workspace-menu-left-items-button {
   @include buttonUnStyle;
+}
+
+.search-placeholder {
+  width: 10rem;
+  height: 2rem;
+  border-radius: 20px;
+  margin-top: 5rem;
+  border: 1px solid white;
 }
 
 //--------------------menu top dropdown-button from icon ----------------
