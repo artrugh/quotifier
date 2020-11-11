@@ -61,9 +61,7 @@
 }
 
 .workspace-menu-left-items-button {
-  border: none;
-  padding: 0;
-  background: none;
+  @include buttonUnStyle;
 }
 
 //--------------------menu top dropdown-button from icon ----------------
@@ -74,6 +72,7 @@
 
 .dropdown-menu1 {
   background: $base-color-light;
+  border-radius: 8px;
   position: absolute;
   top: 75px;
   right: -80px;
@@ -107,6 +106,11 @@
   color: $base-color-dark;
   padding: 15px 20px;
   display: block;
+}
+
+.menu-top-icons-button {
+  @include buttonUnStyle;
+  padding: 15px 20px;
 }
 
 .dropdown-menu1-trigger {
@@ -147,7 +151,7 @@
 }
 
 .dropdown-menu2 {
-  background: #fb3333;
+  background: $base-color-light;
   border-radius: 8px;
   position: absolute;
   top: 75px;
@@ -164,7 +168,7 @@
 .dropdown-menu2.active {
   opacity: 1;
   visibility: visible;
-  transform: translateY();
+  // transform: translateY();
 }
 
 .dropdown-menu2 ul {
@@ -174,12 +178,12 @@
 }
 
 .dropdown-menu2 li {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid $mid-color-dark;
 }
 
 .dropdown-menu2 li a {
   text-decoration: none;
-  color: #333333;
+  color: $base-color-dark;
   padding: 15px 20px;
   display: block;
 }
@@ -196,6 +200,7 @@
   border: none;
   vertical-align: middle;
   transition: box-shadow 0.4s ease;
+  outline: none;
 }
 
 .dropdown-menu2-trigger:hover {
@@ -279,10 +284,6 @@
   margin: 0 10px;
 }
 
-// .menu-left-trigger img {
-//   // border-radius: 90px;
-// }
-
 li.workspace-menu-left-icon-single:hover {
   text-decoration: none;
   outline: none;
@@ -296,10 +297,6 @@ li.workspace-menu-left-icon-single:hover {
 }
 
 li.workspace-menu-left-items-link button {
-  // text-decoration: none;
-  outline: none;
-  // border: 0;
-  border: none;
-  background: none;
+  @include buttonUnStyle;
   color: $base-color-light;
 }

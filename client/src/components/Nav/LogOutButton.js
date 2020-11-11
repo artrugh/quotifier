@@ -29,7 +29,12 @@ const LogOutButton = () => {
 
   return (
     <React.Fragment>
-      <button type="type" value="Logout" onClick={logoutUser}>
+      <button
+        className="menu-top-icons-button"
+        type="type"
+        value="Logout"
+        onClick={logoutUser}
+      >
         Logout
       </button>
     </React.Fragment>
