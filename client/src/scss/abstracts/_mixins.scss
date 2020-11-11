@@ -9,3 +9,15 @@
   border-radius: 30px;
   padding: 1rem;
 }
+
+@mixin justifyCenter {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin buttonUnStyle {
+  border: none;
+  padding: 0;
+  background: none;
+  outline: none;
+}
