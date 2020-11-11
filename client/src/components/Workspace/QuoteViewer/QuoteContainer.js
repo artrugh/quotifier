@@ -2,12 +2,29 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 const QuoteContainer = (props) => {
-  const MyId = props.id;
-  const quote = useSelector((state) => state.quotes[`${MyId}`]);
+  const id = props.id;
+  const quote = useSelector((state) => state.quotes[`${id}`]);
   const source = useSelector((state) => state.sources[quote.source]);
-  const quoteParts = Object.keys(quote);
-  console.log(QuotesToRender);
-  return <div className="quote-container">{QuotesToRender}</div>;
+  const quoteParts = [quote.body, quote.userNotes, quote.location];
+  const sourceParts = [source.sourceTitle, source.sourceInfo];
+  const renderQuote = quoteParts.map((val, i) => {
+    if (val !== undefined) {
+      return <li key={i}>{val}</li>;
+    }
+  });
+  const renderSource = sourceParts.map((val, i) => {
+    if (val !== undefined) {
+      return <li key={i}>{val}</li>;
+    }
+  });
+
+  return (
+    <div className="quote-container">
+      <ul>{renderQuote}</ul>
+      <ul>{renderSource}</ul>
+      <hr />
+    </div>
+  );
 };
 
 export default QuoteContainer;
