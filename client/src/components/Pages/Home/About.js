@@ -10,7 +10,7 @@ function About() {
 
   return (
     <section className="about section">
-      <div data-aos="zoom-in">
+      <div className="home-element-content" data-aos="zoom-in">
         <h2 className="home-header">Welcome!</h2>
         <p className="text">
           never miss a quote again! with quotifier you can keep all your quotes
