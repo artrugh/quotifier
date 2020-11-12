@@ -2,7 +2,7 @@ import React from "react";
 
 function SignUp() {
   return (
-    <div className="sign-up">
+    <section className="sign-up section">
       <h2 className="home-header">Sign Up!</h2>
       <p className="text">
         never miss a quote again! with quotifier you can keep all your quotes
@@ -13,7 +13,7 @@ function SignUp() {
           sign up with email
         </button>
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -43,7 +43,7 @@ button.about-single-button-dark {
 //--------------nav----------------------------------------------
 
 .nav-link {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: $base-color-light;
 }
 
@@ -96,4 +96,13 @@ li.workspace-menu-left-items-link a {
 
 .workspace-menu-left-items-button {
   color: $base-color-light;
+}
+
+//-----------workspace-new-quote form----------------------------------------
+.new-quote-form-text {
+  font-size: 1rem;
+  padding: 0;
+  // border: black 1px solid;
+  align-self: flex-start;
+  margin-left: 2rem;
 }
