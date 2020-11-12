@@ -3,6 +3,7 @@ import userName from "./userData";
 import quotes from "./getUserQuotes";
 import sources from "./getUserSources";
 import filteredQuotes from "./filteredQuotes";
+import quoteViewer from "./views";
 import { combineReducers } from "redux";
 
 const appReducer = combineReducers({
@@ -11,6 +12,7 @@ const appReducer = combineReducers({
   quotes,
   sources,
   filteredQuotes,
+  quoteViewer,
 });
 
 const rootReducer = (state, action) => {

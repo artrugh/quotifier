@@ -69,3 +69,15 @@ export const showAllQuotes = (quotes) => {
     payload: quotes,
   };
 };
+
+export const quoteViewerOn = () => {
+  return {
+    type: "QUOTE_VIEWER_ON",
+  };
+};
+
+export const quoteViewerOff = () => {
+  return {
+    type: "QUOTE_VIEWER_OFF",
+  };
+};

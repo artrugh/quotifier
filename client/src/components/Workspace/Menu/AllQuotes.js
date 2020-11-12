@@ -1,5 +1,5 @@
 import React from "react";
-import { showAllQuotes } from "../../../redux/actions";
+import { showAllQuotes, quoteViewerOn } from "../../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 
 const AllQuotes = () => {
@@ -9,6 +9,7 @@ const AllQuotes = () => {
   const showQuotes = () => {
     console.log(allQuotes);
     dispatch(showAllQuotes(allQuotes));
+    dispatch(quoteViewerOn());
   };
   return (
     <React.Fragment>

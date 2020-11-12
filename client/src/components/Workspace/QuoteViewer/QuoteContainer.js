@@ -19,9 +19,9 @@ const QuoteContainer = (props) => {
   });
 
   return (
-    <div className="quote-container">
-      <ul>{renderQuote}</ul>
-      <ul>{renderSource}</ul>
+    <div className="quote-container text">
+      <ul className="quote-things">{renderQuote}</ul>
+      <ul className="source-things">{renderSource}</ul>
       <hr />
     </div>
   );
