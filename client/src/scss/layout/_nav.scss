@@ -19,6 +19,8 @@
   display: flex;
   justify-content: flex-end;
   background-color: $mid-color-light;
+  position: fixed;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.527);
 }
 
 .nav-links {
@@ -422,3 +424,5 @@ li.workspace-menu-left-items-link button {
   //   @include buttonUnStyle;
   // }
 }
+
+//--------------------workspace-nav-collapsible-----------------

@@ -21,6 +21,7 @@ const WorkspaceMenuLeftItems = () => {
   return (
     <ul className="workspace-menu-left-items menu-left-container">
       <li className="workspace-menu-left-items-button-big ">
+        {" "}
         <NewQuoteFormButton />
       </li>
 
