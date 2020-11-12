@@ -266,6 +266,7 @@ $delay: $duration/6;
 
 //--------------scrolling effect-----------------------
 
+
 .section {
   position: sticky;
   z-index: -1;
@@ -279,3 +280,4 @@ $delay: $duration/6;
 .section:nth-child(3) {
   z-index: -3;
 }
+

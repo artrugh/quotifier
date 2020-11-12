@@ -1,28 +1,43 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import ReactHtmlParser from "react-html-parser";
 
 const QuoteContainer = (props) => {
   const id = props.id;
   const quote = useSelector((state) => state.quotes[`${id}`]);
   const source = useSelector((state) => state.sources[quote.source]);
-  const quoteParts = [quote.body, quote.userNotes, quote.location];
-  const sourceParts = [source.sourceTitle, source.sourceInfo];
-  const renderQuote = quoteParts.map((val, i) => {
-    if (val !== undefined) {
-      return <li key={i}>{val}</li>;
-    }
-  });
-  const renderSource = sourceParts.map((val, i) => {
-    if (val !== undefined) {
-      return <li key={i}>{val}</li>;
-    }
-  });
+  const quoteBody = ReactHtmlParser(quote.body);
+  const quoteNotes = quote.userNotes;
+  const quoteLocation = quote.location;
+  const sourceTitle = source.sourceTitle;
+  const sourceInfo = ReactHtmlParser(source.sourceInfo);
+  const quoteTags = quote.tags;
+  let renderTags;
+  if (quoteTags !== undefined) {
+    renderTags = quoteTags.map((val, i) => {
+      if (val !== undefined) {
+        return (
+          <li className="comma" key={i}>
+            {val}
+          </li>
+        );
+      }
+    });
+  } else {
+    renderTags = null;
+  }
 
   return (
     <div className="quote-container text">
-      <ul className="quote-things">{renderQuote}</ul>
-      <ul className="source-things">{renderSource}</ul>
-      <hr />
+      <span>{quoteBody}</span>
+      <ul className="quoteTags">
+        <li>Tags: </li>
+        {renderTags}
+      </ul>
+      <span>Notes: {quoteNotes}</span>
+      <span>Location: {quoteLocation}</span>
+      <span>Source: {sourceTitle}</span>
+      <span>Details: {sourceInfo}</span>
     </div>
   );
 };

@@ -1,0 +1,17 @@
+.quote-container {
+  span {
+    display: block;
+  }
+  .quoteTags {
+    display: inline;
+    li {
+      display: inline;
+    }
+    li.comma::after {
+      content: ", ";
+    }
+    li.comma:last-child::after {
+      content: "";
+    }
+  }
+}
