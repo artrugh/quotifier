@@ -266,19 +266,16 @@ $delay: $duration/6;
 
 //--------------scrolling effect-----------------------
 
-.about {
-  // position: fixed;
-  // z-index: -1;
+.section {
+  position: sticky;
+  z-index: -1;
+  bottom: 0;
 }
 
-.sign-up {
-  // position: sticky;
-  // position: fixed;
-  // position: relative;
-
-  // z-index: 4;
+.section:nth-child(2) {
+  z-index: -2;
 }
 
-.quote {
-  // z-index: -4;
+.section:nth-child(3) {
+  z-index: -3;
 }

@@ -19,6 +19,16 @@ function NewQuoteFormButton() {
       </button>
       <div className={`new-quote-form ${isActive ? "active" : "inactive"}`}>
         <form className="new-quote-form-form">
+          <p className="new-quote-form-text">Quote</p>
+          <input
+            type="firstName"
+            name="firstName"
+            className="input new-quote-form-input-quote"
+            placeholder="firstName"
+            autoComplete="on"
+            required
+          />
+
           <p className="new-quote-form-text">Author</p>
           <input
             type="firstName"

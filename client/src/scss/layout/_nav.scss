@@ -387,3 +387,38 @@ li.workspace-menu-left-items-link button {
   font-size: 14px;
   margin: 0 10px;
 }
+
+//-----------------media queries-----------------------------
+
+//--------------------workspace-nav-left-----------------
+
+@media only screen and (max-width: 800px) {
+  .workspace-left {
+    min-width: 20vw;
+    background-color: purple;
+  }
+
+  .workspace-menu-left {
+    display: flex;
+    justify-content: left;
+    padding-top: 2rem;
+    background-color: red;
+  }
+
+  .workspace-menu-left-items {
+    //  width: 100%;
+  }
+
+  .workspace-menu-left-items-link {
+    padding: 1rem;
+    @include justifyCenter;
+  }
+
+  .workspace-menu-left-items-link:hover {
+    border-bottom: 1px $base-color-light solid;
+  }
+
+  // .workspace-menu-left-items-button {
+  //   @include buttonUnStyle;
+  // }
+}
