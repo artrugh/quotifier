@@ -14,6 +14,10 @@ const WorkspaceMenuLeftItems = () => {
 
   return (
     <ul className="workspace-menu-left-items menu-left-container">
+      <li className="workspace-menu-left-items-button-big">
+        <Link to="/Tags">new quote</Link>
+      </li>
+
       <li className="workspace-menu-left-items-link">
         <button
           className="workspace-menu-left-items-button menu-left-trigger"

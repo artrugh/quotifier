@@ -63,7 +63,8 @@ p {
 }
 
 li.workspace-menu-left-items-link,
-.menu-left.active {
+.menu-left.active,
+.workspace-menu-left-items-button-big a {
   font-family: "Source Sans Pro";
   font-size: 1.5rem;
   color: $base-color-light;
@@ -77,6 +78,13 @@ li.workspace-menu-left-items-link a {
 .workspace-menu-left-icon-single {
   font-size: 0.9rem;
 }
+
+// .workspace-menu-left-items-button-big a {
+//   color: white;
+//   text-decoration: none;
+//   border: yellow solid 1px;
+//   padding: 0.5rem 1rem;
+// }
 
 //-----------workspace-nav-left----------------------------------------
 

@@ -37,7 +37,7 @@
 //--------------------login-nav-----------------------------
 
 .menu-top-icons {
-  border: 1px rgb(0, 35, 231) solid;
+  // border: 1px rgb(0, 35, 231) solid;
   display: flex;
   padding-right: 1rem;
 }
@@ -47,7 +47,7 @@
 .workspace-menu-left {
   @include justifyCenter;
   padding-top: 2rem;
-  border: 1px $base-color-light solid;
+  // border: 1px $base-color-light solid;
 }
 
 .workspace-menu-left-items {
@@ -56,8 +56,12 @@
 
 .workspace-menu-left-items-link {
   padding: 1rem;
-  border: 1px $base-color-light solid;
+  // border: 1px $base-color-light solid;
   @include justifyCenter;
+}
+
+.workspace-menu-left-items-link:hover {
+  border: 1px $base-color-light solid;
 }
 
 .workspace-menu-left-items-button {
@@ -138,10 +142,6 @@
   vertical-align: middle;
   font-size: 14px;
   margin: 0 10px;
-}
-
-.dropdown-menu1-trigger img {
-  // border-radius: 90px;
 }
 
 //--------------------menu top dropdown-button from icon logout----------------
