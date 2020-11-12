@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 //----------------icons-----------------------
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faPlus, faSearch } from "@fortawesome/free-solid-svg-icons";
-
+//-------------components----------------------------------
 import AllQuotes from "./AllQuotes.js";
+import NewQuoteFormButton from "./NewQuoteButton.js";
 
 const WorkspaceMenuLeftItems = () => {
   const dropdownRef = useRef(null);
@@ -15,10 +16,7 @@ const WorkspaceMenuLeftItems = () => {
   return (
     <ul className="workspace-menu-left-items menu-left-container">
       <li className="workspace-menu-left-items-button-big ">
-        <button className="workspace-menu-left-items-button-new-quote">
-          <FontAwesomeIcon className="test-test" icon={faPlus} />
-          new quote
-        </button>
+        <NewQuoteFormButton />
       </li>
 
       <li className="workspace-menu-left-items-button-big ">
