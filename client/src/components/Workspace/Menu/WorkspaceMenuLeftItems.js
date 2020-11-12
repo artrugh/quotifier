@@ -1,9 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, Fragment } from "react";
 //---------Routing-------------------------------
 import { Link } from "react-router-dom";
 //----------------icons-----------------------
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlay } from "@fortawesome/free-solid-svg-icons";
+import { faPlay, faPlus, faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import AllQuotes from "./AllQuotes.js";
 
@@ -14,8 +14,25 @@ const WorkspaceMenuLeftItems = () => {
 
   return (
     <ul className="workspace-menu-left-items menu-left-container">
-      <li className="workspace-menu-left-items-button-big">
-        <Link to="/Tags">new quote</Link>
+      <li className="workspace-menu-left-items-button-big ">
+        <button className="workspace-menu-left-items-button-new-quote">
+          <FontAwesomeIcon className="test-test" icon={faPlus} />
+          new quote
+        </button>
+      </li>
+
+      <li className="workspace-menu-left-items-button-big ">
+        <button className="workspace-menu-left-items-button-new-quote">
+          <FontAwesomeIcon className="test-test" icon={faPlus} />
+          new source
+        </button>
+      </li>
+
+      <li className="workspace-menu-left-items-button-big ">
+        <button className="workspace-menu-left-items-button-new-quote">
+          <FontAwesomeIcon className="test-test" icon={faSearch} />
+          find quote
+        </button>
       </li>
 
       <li className="workspace-menu-left-items-link">

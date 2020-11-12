@@ -6,7 +6,7 @@
   text-decoration: none;
   border: 1px solid $mid-color-dark;
   color: $mid-color-dark;
-  border-radius: 30px;
+  border-radius: 40px;
   padding: 1rem;
 }
 
@@ -20,4 +20,10 @@
   padding: 0;
   background: none;
   outline: none;
+}
+
+@mixin buttonHoverEffect {
+  cursor: pointer;
+  transform: translateY(3px);
+  box-shadow: 5px 5px $base-color-dark;
 }
