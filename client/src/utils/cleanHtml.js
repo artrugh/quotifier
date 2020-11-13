@@ -1,7 +1,7 @@
 import { sanitize } from "dompurify";
 
-const cleanHTML = (html) => {
+const cleanHtml = (html) => {
   return sanitize(html);
 };
 
-export default cleanHTML;
+export default cleanHtml;
