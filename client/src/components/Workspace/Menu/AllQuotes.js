@@ -6,19 +6,17 @@ const AllQuotes = () => {
   const dispatch = useDispatch();
   const quotesState = useSelector((state) => state.quotes);
   const allQuotes = Object.keys(quotesState);
-  const showQuotes = () => {
+  const handleShowQuotes = () => {
     console.log(allQuotes);
     dispatch(showAllQuotes(allQuotes));
     dispatch(quoteViewerOn());
   };
   return (
-    <React.Fragment>
       <li className="workspace-menu-left-items-link">
-        <button onClick={showQuotes} type="submit">
+        <button onClick={handleShowQuotes} type="submit">
           All Quotes
         </button>
       </li>
-    </React.Fragment>
   );
 };
 
