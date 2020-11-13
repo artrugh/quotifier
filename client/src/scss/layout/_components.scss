@@ -136,6 +136,7 @@ p.text-footer a:link {
   width: 100%;
   @include minHeightComponents;
   display: flex;
+  transform: translateY(60px);
 }
 
 .workspace-right {
@@ -162,11 +163,22 @@ p.text-footer a:link {
   align-items: center;
 }
 
+div.quote-container {
+  border: 1px solid black;
+  margin: 2rem;
+  border-radius: 20px;
+  box-shadow: 10px 10px grey;
+}
+
+div.quote-container:hover {
+  color: grey;
+  cursor: pointer;
+}
+
 //---------new quote form----------------
 
 .new-quote-form-input-quote {
   height: 10rem;
-  // background-color: yellow;
 }
 
 //---------all-quotes-----------------------
