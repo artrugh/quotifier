@@ -5,14 +5,10 @@ import Greeting from "./Greeting";
 
 const WorkspaceMain = () => {
   const quoteViewer = useSelector((state) => state.quoteViewer);
-  let MainContent = Greeting;
-  if (quoteViewer) {
-    MainContent = QuoteViewer;
-  }
-
   return (
     <div className="workspace-main">
       <MainContent />
+    {quoteViewer?QuoteViewer:Greeting}
     </div>
   );
 };
