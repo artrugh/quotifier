@@ -3,7 +3,12 @@ import React, { useState, useRef, Fragment } from "react";
 import { Link } from "react-router-dom";
 //----------------icons-----------------------
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlay, faPlus, faSearch } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPlay,
+  faPlus,
+  faSearch,
+  faFolderMinus,
+} from "@fortawesome/free-solid-svg-icons";
 //-------------components----------------------------------
 import AllQuotes from "./AllQuotes.js";
 import NewQuoteFormButton from "./NewQuoteButton.js";
@@ -16,6 +21,7 @@ const WorkspaceMenuLeftItems = () => {
   return (
     <ul className="workspace-menu-left-items menu-left-container">
       <li className="workspace-menu-left-items-button-big ">
+        {" "}
         <NewQuoteFormButton />
       </li>
 
@@ -70,7 +76,13 @@ const WorkspaceMenuLeftItems = () => {
       <AllQuotes />
 
       <li className="workspace-menu-left-items-link">
-        <Link to="/Tags">Tags</Link>
+        <button>
+          {" "}
+          <FontAwesomeIcon
+            className="workspace-menu-left-icon-folder"
+            icon={faFolderMinus}
+          />
+        </button>
       </li>
     </ul>
   );

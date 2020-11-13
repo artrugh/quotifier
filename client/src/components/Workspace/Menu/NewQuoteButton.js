@@ -17,6 +17,7 @@ function NewQuoteFormButton() {
         <FontAwesomeIcon className="test-test" icon={faPlus} />
         new quote
       </button>
+
       <div className={`new-quote-form ${isActive ? "active" : "inactive"}`}>
         <form className="new-quote-form-form">
           <p className="new-quote-form-text">Quote</p>

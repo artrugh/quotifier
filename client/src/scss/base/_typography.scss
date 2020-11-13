@@ -98,6 +98,11 @@ li.workspace-menu-left-items-link a {
   color: $base-color-light;
 }
 
+.workspace-menu-left-icon-folder {
+  font-size: 3rem;
+  margin-top: 4rem;
+}
+
 //-----------workspace-new-quote form----------------------------------------
 .new-quote-form-text {
   font-size: 1rem;
@@ -105,4 +110,16 @@ li.workspace-menu-left-items-link a {
   // border: black 1px solid;
   align-self: flex-start;
   margin-left: 2rem;
+}
+
+//-------------workspace all quotes----------------------
+
+//applies style to all children of this element
+div.quote-container > *,
+div.quote-container > * > * {
+  font-size: 1.5rem;
+}
+
+div.quote-container span:nth-child(2n + 0) {
+  font-weight: bold;
 }
