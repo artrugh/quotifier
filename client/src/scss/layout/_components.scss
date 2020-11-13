@@ -173,6 +173,7 @@ div.quote-container {
 div.quote-container:hover {
   color: grey;
   cursor: pointer;
+  transform: translateY(10px);
 }
 
 //---------new quote form----------------
